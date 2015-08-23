@@ -1,0 +1,22 @@
+<result>
+    <rowset name="jobs" key="jobID">
+    <row
+      activityID="1" blueprintID="1012218751226" blueprintLocationID="60002758" blueprintTypeID="31178"
+      blueprintTypeName="Small Polycarbon Engine Housing I Blueprint" completedCharacterID="0"
+      completedDate="0001-01-01 00:00:00" cost="0.00" endDate="2014-07-14 05:26:50" facilityID="60002758"
+      installerID="93578165" installerName="Rhals Tea" jobID="229049806" licensedRuns="0"
+      outputLocationID="60002758" pauseDate="0001-01-01 00:00:00" probability="0" productTypeID="31177"
+      productTypeName="Small Polycarbon Engine Housing I" runs="83" solarSystemID="30002776"
+      solarSystemName="Annaro" startDate="2014-07-13 06:48:39" stationID="60002758" status="1" teamID="0"
+      timeInSeconds="81491" />
+    <row
+      activityID="1" blueprintID="1012703933072" blueprintLocationID="60002758" blueprintTypeID="31599"
+      blueprintTypeName="Small Hydraulic Bay Thrusters I Blueprint" completedCharacterID="0"
+      completedDate="0001-01-01 00:00:00" cost="0.00" endDate="2014-07-14 05:27:12" facilityID="60002758"
+      installerID="93578165" installerName="Rhals Tea" jobID="229049720" licensedRuns="0"
+      outputLocationID="60002758" pauseDate="0001-01-01 00:00:00" probability="0" productTypeID="31598"
+      productTypeName="Small Hydraulic Bay Thrusters I" runs="68" solarSystemID="30002776"
+      solarSystemName="Annaro" startDate="2014-07-13 06:47:12" stationID="60002758" status="1" teamID="0"
+      timeInSeconds="81600" />
+    </rowset>
+</result>
