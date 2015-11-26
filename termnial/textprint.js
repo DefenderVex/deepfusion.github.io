@@ -5,7 +5,7 @@ var bind = Function.prototype.bind,
 	$append = bind.call(Element.prototype.appendChild, document.querySelector("output")),
 	$new = bind.call(Document.prototype.createElement, document),
 	$text = bind.call(Document.prototype.createTextNode, document),
-	$rnd = function() { return (9 + 0)|0; }, 
+	$rnd = function() { return (6 + 0)|0; }, 
 	$promise = function(thenFn) {
 	  var args, promise, wait, slice=Array.prototype.slice, isResolved = false;
 	  var promise = {
