@@ -10,44 +10,46 @@
 		<script>
 			var open = new Audio("http://defendervex.github.io/termnial/boot_sound.wav");
 			open.volume = .5;
-			open.play();
 			
-			setTimeout(function(){
-				type("Welcome to ROBCO Industries (TM) Termlink")
-				  .wait(1000)
-				  .then("Initializing...")
-			}, 0);
-			
-			open.addEventListener('ended', function() {
+				open.addEventListener('canplaythrough', function() {
+				open.play();
+				
 				setTimeout(function(){
-				type(" ")
-				  .then("Falsebook Information Services Inc.")
-				  .then("")
-				  .wait(1000)
-				  .then("Attempting to locate relational data...")
-				  .then("")
-				  .wait(2000)
-				  .then("Failed! Retrying (1/3)")
-				  .wait(2000)
-				  .then("Failed! Retrying (2/3)")
-				  .wait(2000)
-				  .then("Failed! Retrying (3/3)")
-				  .wait(2000)
-				  .then("")
-				  .then("Data retrieval failed three (3) times!")
-				  .then("Please contact your system administrator.")
-				  .then("")
-				  .then("")
-				  .then("")
-				  .then("")
-				  .then("")
-				  .then("")
-				  .then("")
-				  .then("")
-				  .then("")
-				  
-				  .then("")
+					type("Welcome to ROBCO Industries (TM) Termlink")
+					  .then("Initializing...")
 				}, 0);
+				
+				open.addEventListener('ended', function() {
+					setTimeout(function(){
+					type(" ")
+					  .then("Falsebook Information Services Inc.")
+					  .then("")
+					  .wait(1000)
+					  .then("Attempting to locate relational data...")
+					  .then("")
+					  .wait(2000)
+					  .then("Failed! Retrying (1/3)")
+					  .wait(2000)
+					  .then("Failed! Retrying (2/3)")
+					  .wait(2000)
+					  .then("Failed! Retrying (3/3)")
+					  .wait(2000)
+					  .then("")
+					  .then("Data retrieval failed three (3) times!")
+					  .then("Please contact your system administrator.")
+					  .then("")
+					  .then("")
+					  .then("")
+					  .then("")
+					  .then("")
+					  .then("")
+					  .then("")
+					  .then("")
+					  .then("")
+					  
+					  .then("")
+					}, 0);
+				}, false);
 			}, false);
 		</script>
 

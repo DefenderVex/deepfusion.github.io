@@ -10,40 +10,42 @@
 		<script>
 			var open = new Audio("http://defendervex.github.io/termnial/boot_sound.wav");
 			open.volume = .5;
-			open.play();
 			
-			setTimeout(function(){
-				type("Welcome to ROBCO Industries (TM) Termlink")
-				  .wait(1000)
-				  .then("Initializing...")
-			}, 0);
-				  
-			open.addEventListener('ended', function() {
-				setTimeout(function(){
-				type(" ")
-				  .then("Falsebook Information Services Inc.")
-				  .then("")
-				  .wait(1000)
-				  .then("||  [FIRST NAME]:  Tyler             ||  [LAST NAME]:   Braxton           ||  [ALIASES]:    {NONE}            ||")
-				  .then("||  [BIRTHDATE]:   06/24/2268        ||  [BIRTHPLACE]:  North Haven       ||  [AGE]:        Nineteen          ||")
-				  .then("||  [HAIR COLOR]:  Dark Brown        ||  [SKIN TONE]:   Light-Tan         ||  [EYE COLOR]:  Light-Blue        ||")
-				  .then("||  [SEXUALITY]:   {No Data}         ||  [BUILD]:       Lean-Fit          ||  [HEIGHT]:     5'11              ||")
-				  .then("")
-				  .then("||  [DISTINGUISHING FEATURES]: Large claw shaped scar across his back,  Simple band style tattoo on his lower right arm.              ||")
-				  .then("||  [OTHER DETAILS]: AB-Negitive bloodtype, ######## ########### ### ########## ######## #########, ####### #### #############.       ||")
-				  .then("")
-				  .then("||  [CURRENT LOADOUT]: Green cargo jacket, Grey t-shirt, Grey cargo pants, Black combat boots, Set of dogtags, ####### #### #### ##.  ||")
-				  .then("")
-				  .then("||  [MENTAL HEALTH]    [################################################################################                    ] %80.00  ||")
-				  .then("||  [PHYSICAL HEALTH]  [##########################################################################################          ] %90.00  ||")
-				  .then("")
-				  .then("- Inventory -")
-				  .then("||  Sketchbook & Pencils  ||  Tyler's Outfit  ||")
-				  .then("||  ####### #### #### ##  ||  Messenger Bag   ||")
-				  .then("")
-				  
-				  .then("")
-				}, 0);
+				open.addEventListener('canplaythrough', function() {
+					open.play();
+					
+					setTimeout(function(){
+						type("Welcome to ROBCO Industries (TM) Termlink")
+						  .then("Initializing...")
+					}, 0);
+						  
+					open.addEventListener('ended', function() {
+						setTimeout(function(){
+						type(" ")
+						  .then("Falsebook Information Services Inc.")
+						  .then("")
+						  .wait(1000)
+						  .then("||  [FIRST NAME]:  Tyler             ||  [LAST NAME]:   Braxton           ||  [ALIASES]:    {NONE}            ||")
+						  .then("||  [BIRTHDATE]:   06/24/2268        ||  [BIRTHPLACE]:  North Haven       ||  [AGE]:        Nineteen          ||")
+						  .then("||  [HAIR COLOR]:  Dark Brown        ||  [SKIN TONE]:   Light-Tan         ||  [EYE COLOR]:  Light-Blue        ||")
+						  .then("||  [SEXUALITY]:   {No Data}         ||  [BUILD]:       Lean-Fit          ||  [HEIGHT]:     5'11              ||")
+						  .then("")
+						  .then("||  [DISTINGUISHING FEATURES]: Large claw shaped scar across his back,  Simple band style tattoo on his lower right arm.              ||")
+						  .then("||  [OTHER DETAILS]: AB-Negitive bloodtype, ######## ########### ### ########## ######## #########, ####### #### #############.       ||")
+						  .then("")
+						  .then("||  [CURRENT LOADOUT]: Green cargo jacket, Grey t-shirt, Grey cargo pants, Black combat boots, Set of dogtags, ####### #### #### ##.  ||")
+						  .then("")
+						  .then("||  [MENTAL HEALTH]    [################################################################################                    ] %80.00  ||")
+						  .then("||  [PHYSICAL HEALTH]  [##########################################################################################          ] %90.00  ||")
+						  .then("")
+						  .then("- Inventory -")
+						  .then("||  Sketchbook & Pencils  ||  Tyler's Outfit  ||")
+						  .then("||  ####### #### #### ##  ||  Messenger Bag   ||")
+						  .then("")
+						  
+						  .then("")
+						}, 0);
+					}, false);
 			}, false);
 		</script>
 
