@@ -1,0 +1,66 @@
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		<pre><output></output></pre>
+		<script src="textprint.js"></script>
+		
+		<script>
+			var open = new Audio("http://defendervex.github.io/termnial/boot_sound.wav");
+			open.volume = .5;
+			
+			open.addEventListener('canplaythrough', function() {
+				open.play();
+				
+				setTimeout(function(){
+					type("Welcome to ROBCO Industries (TM) Termlink")
+					  .then("Initializing...")
+					  .wait(3000)
+					  .then("")
+					  .then("Deepfusion Server Interface Protocol.")
+					  .wait(1000)
+					  .then("")
+					  .then("Checking for updates...")
+					  .wait(5000)
+					  .then("System is up to date! (No updates found)")
+					  .wait(5000)
+					  .then("Connecting to server...")
+					  .wait(5000)
+					  .then("Connection established!")
+					  .wait(5000)
+					  .then("Downloading user list...")
+					  .wait(5000)
+					  .then("Loading local settings...")
+					  .wait(5000)
+					  .then("Initializing user interface...")
+					  .wait(5000)
+					  .then("Loading character data...")
+					  .wait(5000)
+					  .then("Generating navmap...")
+					  .wait(5000)
+					  .then("Preparing sweetrolls...")
+					  .wait(5000)
+					  .then("Cycling cyro-chamber...")
+					  .wait(5000)
+					  .then("Peparing more sweetrolls...")
+					  .wait(5000)
+					  .then("Bribing town guard...")
+					  .wait(5000)
+					  .then("Attempting to win the lottery...")
+					  .wait(5000)
+					  .then("Loading world...")
+					  .wait(5000)
+					  .then("Mining da bitcoin...")
+					  .wait(5000)
+					  .then("Mining da dogecoin...")
+					  
+					  .then("")
+				}, 0);
+			}, false);
+		</script>
+
+		<script src="load.js"></script>
+	</body>
+</html>
