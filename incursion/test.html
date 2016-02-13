@@ -77,13 +77,13 @@
 					init();
 					animate();
 					
-					video.play();
 					
 					audio.addEventListener('canplaythrough', function () {
 						audio.play();
 					});
 				});
 				video.src = 'video.mp4';
+				video.play();
 
 				function init() {
 					camera = new THREE.PerspectiveCamera(55, 1080/ 720, 20, 3000);
