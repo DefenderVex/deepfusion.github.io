@@ -60,8 +60,8 @@
 				audio.addEventListener('ended', function() {
 					this.currentTime = 0;
 					this.play();
-					this.play();
 				}, false);
+				audio.play();
 
 				//Load Video
 				video = document.createElement('video');
@@ -76,11 +76,6 @@
 
 					init();
 					animate();
-					
-					
-					audio.addEventListener('canplaythrough', function () {
-						audio.play();
-					});
 				});
 				video.src = 'video.mp4';
 				video.play();
