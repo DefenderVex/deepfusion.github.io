@@ -4,7 +4,11 @@
 		<link rel="stylesheet" href="css/jquery.fullPage.css">
 	</head>
 
-	<body style="background-color: black;">	
+	<body style="background-color: black;">
+		<audio loop="loop" autoplay="autoplay">  
+			<source src="audio.mp3"/>
+		</audio> 
+	
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/three.min.js"></script>
 		<script src="js/EffectComposer.js"></script>
@@ -54,14 +58,6 @@
 					badTVPass, staticPass, rgbPass, filmPass, renderPass, copyPass,
 					shaderTime = 0,
 					videoInit = false;
-					
-				//Load Audio
-				audio = new Audio('audio.mp3'); 
-				audio.addEventListener('ended', function() {
-					this.currentTime = 0;
-					this.play();
-				}, false);
-				audio.play();
 
 				//Load Video
 				video = document.createElement('video');
