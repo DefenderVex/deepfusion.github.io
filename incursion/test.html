@@ -5,7 +5,7 @@
 	</head>
 
 	<body style="background-color: black;">
-		<audio loop="loop" autoplay="autoplay" volume="0.2">  
+		<audio loop="loop" autoplay="autoplay" id="audio">  
 			<source src="audio.mp3"/>
 		</audio> 
 	
@@ -23,6 +23,11 @@
 		<script src="js/jquery.fullPage.min.js"></script>
 				
 		<script>
+			window.onload = function() {
+				var audio=document.getElementById("bgAudio");
+				audio.volume=0.5;
+			}
+		
 			(function () {
 				"use strict";
 
