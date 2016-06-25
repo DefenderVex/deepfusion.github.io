@@ -5,9 +5,7 @@
 	</head>
 
 	<body style="background-color: black;">
-		<audio loop="loop" autoplay="autoplay" id="audio">  
-			<source src="trailer/audio.mp3"/>
-		</audio> 
+		<audio loop="loop" autoplay="autoplay" id="audio"></audio>
 	
 		<script src="trailer/js/jquery-1.11.1.min.js"></script>
 		<script src="trailer/js/three.min.js"></script>
@@ -23,11 +21,6 @@
 		<script src="trailer/js/jquery.fullPage.min.js"></script>
 				
 		<script>
-			window.onload = function() {
-				var audio = document.getElementById("audio");
-				audio.volume = 0.6;
-			}
-		
 			(function () {
 				"use strict";
 
@@ -78,8 +71,6 @@
 					init();
 					animate();
 				});
-				video.src = 'trailer/video.mp4';
-				video.play();
 
 				function init() {
 					camera = new THREE.PerspectiveCamera(55, 1080/ 720, 20, 3000);
@@ -190,6 +181,16 @@
 					renderer.setSize(window.innerWidth, window.innerHeight);
 					camera.aspect = window.innerWidth / window.innerHeight;
 					camera.updateProjectionMatrix();
+				}
+				
+				window.onload = function() {
+					var ran = Math.floor((Math.random() * 2) + 1);
+				
+					var audio = document.getElementById("audio");
+					audio.volume = 0.2;
+					
+					audio.src = 'trailer/src/audio_'+ran+'.mp3'
+					video.src = 'trailer/src/video_'+ran+'.mp4'
 				}
 			}());
 		</script>
