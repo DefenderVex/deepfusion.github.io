@@ -28,10 +28,10 @@ body {
     font-family: 'Share Tech Mono';
     font-size: 16px;
 	overflow: hidden;
-	background-image: url("pattern.png");
 }
 
 #window{
+	background-image: url("pattern.png");
 	background-color: rgb(12, 12, 12);
 	background-position: center;
 	animation: pulse 4s infinite;
@@ -61,6 +61,7 @@ body {
 	position: relative;
 	white-space: pre;
 	line-height: 10px;
+	background-color: transperent;
 }
 
 a:link {
