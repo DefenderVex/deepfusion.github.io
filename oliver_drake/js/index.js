@@ -8,8 +8,8 @@ loop.addEventListener('ended', function() {
 
 loop.play();
 
-loop.volume = .1;
-click.volume = .2;
+loop.volume = .05;
+click.volume = .1;
 
 $.fn.typewriter = function() {
 	this.each(function() {
