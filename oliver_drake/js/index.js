@@ -1,3 +1,4 @@
+// Terminal Bio 3.0 By Vex //
 var click = new Audio("sound/char_scroll.wav");
 var loop = new Audio("sound/fan_loop.wav");
 
