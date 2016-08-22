@@ -43,7 +43,7 @@ $.fn.typewriter = function() {
 					setTimeout(typewriting, delay);
 					delay = 0;
 				}else{
-					setTimeout(typewriting, 1);
+					setTimeout(typewriting, 5);
 				}	
 			}
 		}
