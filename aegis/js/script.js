@@ -19,5 +19,4 @@ $.getJSON('https://ipapi.co/json/', function(data){
         target: '.navbar-fixed-top',
         offset: 51
     });
-
 })(jQuery);
