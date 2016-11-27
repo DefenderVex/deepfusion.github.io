@@ -1,5 +1,5 @@
 $.getJSON('https://ipapi.co/json/', function(data){
-	if (data.country = 'NZ') {
+	if (data.country != 'NZ') {
 		window.location.replace("noaccess");
 	}
 });
