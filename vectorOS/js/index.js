@@ -54,8 +54,8 @@ var cmds = {
 			"|-----------|-----------|-------------------|",
 			"| File Name | File Type | File Size (Bytes) |",
 			"|-----------|-----------|-------------------|",
-			"| profile   | Document  | 706 Bytes         |",
-			"| relations | Document  | 886 Bytes         |",
+			"| profile   | Document  | 721 Bytes         |",
+			"| relations | Document  | 903 Bytes         |",
 			"|-----------|-----------|-------------------|",
 			"&nbsp;"
 		];
@@ -65,17 +65,6 @@ var cmds = {
 	},
 	
 	"profile": function() {
-		var print = [
-			"File: profile",
-			"********************************************************************************************************************",
-			"||----------------------------||-----------------------||----------------------||---------------------------------||",
-			"||  [NAME]:   Clay Lockwood   ||  [ALIAS]:    Sparky   ||  [AGE]:       21     ||  [NATIONALITY]: Irish-American  ||",
-			"||  [HEIGHT]: 6'3"+'"'+"            ||  [WEIGHT]:   170 lbs  ||  [BUILD]:     Lean   ||  [SEXUALITY]:   Homosexual      ||",
-			"||  [HAIR]:   Brown & Blonde  ||  [LEFT EYE]: Blue     ||  [RIGHT EYE]: Brown  ||  [SKIN]:        Light Tan       ||",
-			"||----------------------------||-----------------------||----------------------||---------------------------------||",
-			"&nbsp;"
-		];
-		
 		$("#outputs").html("");
 		$.get("http://defendervex.github.io/vectorOS/profile.txt", function(data) {
 			output(data.split("\n"), true, true);
