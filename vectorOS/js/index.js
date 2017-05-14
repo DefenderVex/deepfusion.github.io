@@ -16,7 +16,7 @@ $('.console-input').click(function() {
 });
 
 // Output to Console
-function output(print, noAppend) {
+function output(print, pre, noAppend) {
 	var cmd = $('.console-input').val();
 	if(cmd==""){cmd="<span style='opacity:0;'>...</span>";}
 	if (noAppend != true) { $("#outputs").append("<span class='output-cmd-pre'>USER //</span><span class='output-cmd'>" + cmd + "</span>"); }
@@ -28,14 +28,16 @@ function output(print, noAppend) {
 			value = "&nbsp;";
 			cmd = "&nbsp;";
 		}
-		$("#outputs").append("<span class='output-text-pre'>" + cmd + "</span><span class='output-text'>" + value + "</span>");
+		if (pre == true) {
+			$("#outputs").append("<span class='output-text-pre'>" + cmd + "</span><span class='output-text' style='line-height: 5px; white-space: pre;'><pre>" + value + "</pre></span>");
+		} else {
+			$("#outputs").append("<span class='output-text-pre'>" + cmd + "</span><span class='output-text'>" + value + "</span>");
+		}
 	});
 
 	$('.console-input').val("");
 	//$('.console-input').focus();
-	$("html, body").animate({
-		scrollTop: $(document).height()
-	}, 300);
+	$("html, body").animate({ scrollTop: $(document).height()}, 0);
 }
 
 // Break Value
@@ -49,20 +51,57 @@ var cmds = {
 	
 	"list": function() {
 		var print = [
-			"&nbsp;",
-			"File 01",
-			"File 02",
-			"File 03",
-			"File 04",
+			"|-----------|-----------|-------------------|",
+			"| File Name | File Type | File Size (Bytes) |",
+			"|-----------|-----------|-------------------|",
+			"| profile   | Document  | 706 Bytes         |",
+			"| relations | Document  | 886 Bytes         |",
+			"|-----------|-----------|-------------------|",
 			"&nbsp;"
 		];
-
-		output(print);
+		
+		$("#outputs").html("");
+		output(print, true, true);
+	},
+	
+	"profile": function() {
+		var print = [
+			"File: profile",
+			"********************************************************************************************************************",
+			"||----------------------------||-----------------------||----------------------||---------------------------------||",
+			"||  [NAME]:   Clay Lockwood   ||  [ALIAS]:    Sparky   ||  [AGE]:       21     ||  [NATIONALITY]: Irish-American  ||",
+			"||  [HEIGHT]: 6'3"+'"'+"            ||  [WEIGHT]:   170 lbs  ||  [BUILD]:     Lean   ||  [SEXUALITY]:   Homosexual      ||",
+			"||  [HAIR]:   Brown & Blonde  ||  [LEFT EYE]: Blue     ||  [RIGHT EYE]: Brown  ||  [SKIN]:        Light Tan       ||",
+			"||----------------------------||-----------------------||----------------------||---------------------------------||",
+			"&nbsp;"
+		];
+		
+		$("#outputs").html("");
+		output(print, true, true);
+	},
+	
+	"relations": function() {
+		var print = [
+			"File: profile",
+			"********************************************************************************************************************",
+			"||----------------------------||-----------------------||----------------------||---------------------------------||",
+			"||  [NAME]:   Clay Lockwood   ||  [ALIAS]:    Sparky   ||  [AGE]:       21     ||  [NATIONALITY]: Irish-American  ||",
+			"||  [HEIGHT]: 6'3"+'"'+"            ||  [WEIGHT]:   170 lbs  ||  [BUILD]:     Lean   ||  [SEXUALITY]:   Homosexual      ||",
+			"||  [HAIR]:   Brown & Blonde  ||  [LEFT EYE]: Blue     ||  [RIGHT EYE]: Brown  ||  [SKIN]:        Light Tan       ||",
+			"||----------------------------||-----------------------||----------------------||---------------------------------||",
+			"&nbsp;"
+		];
+		
+		$("#outputs").html("");
+		$.get("http://defendervex.github.io/vectorOS/relations.txt" + "&nbsp;", function(data) {
+			output(split("\n"), true, true);
+		});
 	},
 };
 
 // Boot Output
-output(["Vector OS 4.0 (TERMINAL MODE)", "Type: 'list' to begin", ""], true);
+output(["Vector OS 4.0 (TERMINAL MODE)", "", "A low bandwidth environment was detected and terminal mode has been automatically enabled,",
+		"This action was taken to insure a smooth and stable connection to the remote location.", "", " Type 'list' to begin", ""], false, true);
 
 // Get User Command
 $('.console-input').on('keypress', function(event) {
