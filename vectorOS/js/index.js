@@ -70,10 +70,10 @@ var cmds = {
 	
 	"commands": function() {
 		var print = [
-			"Commands",
+			"commands",
 			"*******************************************************",
-			"list  :: <prints all files and programs to the screen>",
-			"clear :: <clears all printed information on the screen>",
+			"list  :: [prints all files and programs to the screen]",
+			"clear :: [clears all printed information on the screen]",
 			"&nbsp;"
 		];
 		
