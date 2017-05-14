@@ -53,14 +53,14 @@ var cmds = {
 	
 	"list": function() {
 		var print = [
-			"File Directory",
-			"*********************************************",
-			"|-----------|-----------|-------------------|",
-			"| File Name | File Type | File Size (Bytes) |",
-			"|-----------|-----------|-------------------|",
-			"| profile   | Document  | 721 Bytes         |",
-			"| relations | Document  | 903 Bytes         |",
-			"|-----------|-----------|-------------------|",
+			"file directory",
+			"*************************************************",
+			"|---------------|-----------|-------------------|",
+			"| File Name     | File Type | File Size (Bytes) |",
+			"|---------------|-----------|-------------------|",
+			"| profile.txt   | Document  | 721 Bytes         |",
+			"| relations.txt | Document  | 903 Bytes         |",
+			"|---------------|-----------|-------------------|",
 			"&nbsp;"
 		];
 		
@@ -118,7 +118,12 @@ $('.console-input').on('keypress', function(event) {
 		}
 		
 		} else {
-			output(["Error: Command or file not found!"]);
+			if (str.endsWith(".txt")) {
+				output(["Error: No such file!"]);
+			} else {
+				output(["Error: Command or file not found!"]);
+			}
+			
 		}
 		
 		$(this).val("");
