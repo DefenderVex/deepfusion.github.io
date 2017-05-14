@@ -33,6 +33,7 @@ static inline void idle_init(unsigned int cpu)
 	
 }
 
+
 void __init idle_threads_init(void)
 
 {
@@ -50,39 +51,13 @@ void __init idle_threads_init(void)
 	}
 	
 }
-
-#endif
-
-static LIST_HEAD(hotplug_threads);
-
-static DEFINE_MUTEX(smpboot_threads_lock);
-
-struct smpboot_thread_data {
-
-	unsigned int			cpu;
-	
-	unsigned int			status;
-	
-	struct smp_hotplug_thread	*ht;
-	
-};
-
-enum {
-
-	HP_THREAD_NONE = 0,
-	
-	HP_THREAD_ACTIVE,
-	
-	HP_THREAD_PARKED,
-	
-};
 <wait>
 <clear>
 > Welcome Back C.Lockwood!<br/>
 **************************************************************************************************************************************************<br/><br/>
 <a href="https://www.youtube.com/watch?v=8Xv_Hg8o1fw">   > Load Personal Theme (Coldplay - Clocks)</a>
-<a href="record.html">   > Load Public Information Profile</a>
-<a href="#">   > Load Public Relations Record [FILE ERROR]</a>
+<a href="profile.html">   > Load Public Information Profile</a>
+<a href="relations.html">   > Load Public Relations Record</a>
 			</div>
 		</div>
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
