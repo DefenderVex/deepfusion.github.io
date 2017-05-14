@@ -47,16 +47,33 @@ var newLine = "<br/> &nbsp;";
 var cmds = {
 	"clear": function() {
 		$("#outputs").html("");
+		output(["Vector OS 2.0 (TERMINAL MODE)", "Created by Clay Lockwood", "", "A low bandwidth or unstable connection environment was detected and Terminal Mode has been automatically enabled,",
+				"This action was taken to decrease data traffic usage to maintain a smooth and stable connection to the remote server.", "", " Type 'commands' to begin", ""], false, true);
 	},
 	
 	"list": function() {
 		var print = [
+			"File Directory",
+			"*********************************************",
 			"|-----------|-----------|-------------------|",
 			"| File Name | File Type | File Size (Bytes) |",
 			"|-----------|-----------|-------------------|",
 			"| profile   | Document  | 721 Bytes         |",
 			"| relations | Document  | 903 Bytes         |",
 			"|-----------|-----------|-------------------|",
+			"&nbsp;"
+		];
+		
+		$("#outputs").html("");
+		output(print, true, true);
+	},
+	
+	"commands": function() {
+		var print = [
+			"Commands",
+			"*******************************************************",
+			"list  :: <prints all files and programs to the screen>",
+			"clear :: <clears all printed information on the screen>",
 			"&nbsp;"
 		];
 		
@@ -80,8 +97,8 @@ var cmds = {
 };
 
 // Boot Output
-output(["Vector OS 4.0 (TERMINAL MODE)", "", "A low bandwidth environment was detected and terminal mode has been automatically enabled,",
-		"This action was taken to insure a smooth and stable connection to the remote location.", "", " Type 'list' to begin", ""], false, true);
+output(["Vector OS 2.0 (TERMINAL MODE)", "Created by Clay Lockwood", "", "A low bandwidth or unstable connection environment was detected and Terminal Mode has been automatically enabled,",
+		"This action was taken to decrease data traffic usage to maintain a smooth and stable connection to the remote server.", "", " Type 'commands' to begin", ""], false, true);
 
 // Get User Command
 $('.console-input').on('keypress', function(event) {
