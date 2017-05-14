@@ -1,0 +1,153 @@
+// Focus
+$('.console-input').focus();
+
+// Force Lowercase Input
+$('.console-input').keyup(function() {
+	//this.value = this.value.toLowerCase();
+});
+
+// Force Cursor to End
+$('.console-input').keydown(function() {
+	this.value = this.value;
+});
+
+$('.console-input').click(function() {
+	this.value = this.value;
+});
+
+// Output to Console
+function output(print, noAppend) {
+	var cmd = $('.console-input').val();
+	if(cmd==""){cmd="<span style='opacity:0;'>...</span>";}
+	if (noAppend != true) { $("#outputs").append("<span class='output-cmd-pre'>USER //</span><span class='output-cmd'>" + cmd + "</span>"); }
+
+	$.each(print, function(index, value) {
+		cmd = "";
+		cmd += "";
+		if (value == "") {
+			value = "&nbsp;";
+			cmd = "&nbsp;";
+		}
+		$("#outputs").append("<span class='output-text-pre'>" + cmd + "</span><span class='output-text'>" + value + "</span>");
+	});
+
+	$('.console-input').val("");
+	//$('.console-input').focus();
+	$("html, body").animate({
+		scrollTop: $(document).height()
+	}, 300);
+}
+
+// Break Value
+var newLine = "<br/> &nbsp;";
+
+// User Commands
+var cmds = {
+	"clear": function() {
+		$("#outputs").html("");
+	},
+	
+	"list": function() {
+		var print = [
+			"&nbsp;",
+			"File 01",
+			"File 02",
+			"File 03",
+			"File 04",
+			"&nbsp;"
+		];
+
+		output(print);
+	},
+};
+
+// Boot Output
+output(["Vector OS 4.0 (TERMINAL MODE)", "Type: 'list' to begin", ""], true);
+
+// Get User Command
+$('.console-input').on('keypress', function(event) {
+	if (event.which === 13) {
+		var str = $(this).val();
+		
+		var data = str.split(' '); data.shift(); data = data.join(' ');
+		var cmd = str.split(' ')[0];
+		
+		if (str.length < 1 || str.charAt(0) == " ") {
+			
+		} else if (typeof cmds[cmd] == 'function') {
+			if(cmds[cmd].length > 0) {
+			cmds[cmd](data);
+		} else {
+			cmds[cmd]();
+		}
+		
+		} else {
+			output(["Error: Command or file not found!"]);
+		}
+		
+		$(this).val("");
+	}
+});
+
+// Particles BG
+particlesJS('particles-js', {
+	'particles': {
+	'number': {
+	'value': 100
+	},
+	'color': {
+	'value': '#fca533'
+	},
+	'shape': {
+	'type': 'triangle',
+	'polygon': {
+	'nb_sides': 5
+	}
+	},
+	'opacity': {
+	'value': 0.06,
+	'random': false
+	},
+	'size': {
+	'value': 11,
+	'random': true
+	},
+	'line_linked': {
+	'enable': true,
+	'distance': 150,
+	'color': '#fca533',
+	'opacity': 0.4,
+	'width': 1
+	},
+	'move': {
+	'enable': true,
+	'speed': 2,
+	'direction': 'none',
+	'random': false,
+	'straight': false,
+	'out_mode': 'out',
+	'bounce': false
+	}
+	},
+	'interactivity': {
+	'detect_on': 'canvas',
+	'events': {
+	'onhover': {
+	'enable': false
+	},
+	'onclick': {
+	'enable': true,
+	'mode': 'push'
+	},
+	'resize': true
+	},
+	'modes': {
+	'push': {
+	'particles_nb': 4
+	}
+	}
+	},
+	'retina_detect': true
+},
+function() {
+});
