@@ -77,24 +77,15 @@ var cmds = {
 		];
 		
 		$("#outputs").html("");
-		output(print, true, true);
+		$.get("http://defendervex.github.io/vectorOS/profile.txt", function(data) {
+			output(data.split("\n"), true, true);
+		});
 	},
 	
-	"relations": function() {
-		var print = [
-			"File: profile",
-			"********************************************************************************************************************",
-			"||----------------------------||-----------------------||----------------------||---------------------------------||",
-			"||  [NAME]:   Clay Lockwood   ||  [ALIAS]:    Sparky   ||  [AGE]:       21     ||  [NATIONALITY]: Irish-American  ||",
-			"||  [HEIGHT]: 6'3"+'"'+"            ||  [WEIGHT]:   170 lbs  ||  [BUILD]:     Lean   ||  [SEXUALITY]:   Homosexual      ||",
-			"||  [HAIR]:   Brown & Blonde  ||  [LEFT EYE]: Blue     ||  [RIGHT EYE]: Brown  ||  [SKIN]:        Light Tan       ||",
-			"||----------------------------||-----------------------||----------------------||---------------------------------||",
-			"&nbsp;"
-		];
-		
+	"relations": function() {		
 		$("#outputs").html("");
-		$.get("http://defendervex.github.io/vectorOS/relations.txt" + "&nbsp;", function(data) {
-			output(split("\n"), true, true);
+		$.get("http://defendervex.github.io/vectorOS/relations.txt", function(data) {
+			output(data.split("\n"), true, true);
 		});
 	},
 };
