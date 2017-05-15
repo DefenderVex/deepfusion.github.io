@@ -48,6 +48,8 @@ body {
 	text-align: right;
 	float: left;
 	clear: left;
+	max-width: 100%;
+	word-wrap: break-word;
 }
 
 .console-label, .output-cmd-pre {
@@ -82,6 +84,8 @@ span, input {
 
 .output-text, .output-cmd {
 	display: block;
+	max-width: 100%;
+	word-wrap: break-word;
 }
 
 #outputs span {

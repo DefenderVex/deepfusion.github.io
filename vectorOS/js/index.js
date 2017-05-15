@@ -20,7 +20,11 @@ $('.console-input').click(function() {
 function output(print, pre, noAppend) {
 	var cmd = $('.console-input').val();
 	if(cmd==""){cmd="<span style='opacity:0;'>...</span>";}
-	if (noAppend != true) { $("#outputs").append("<span class='output-cmd-pre'>USER //</span><span class='output-cmd'>" + cmd + "</span>"); }
+	if (noAppend == true) {
+		
+	} else {
+		$("#outputs").append("<span class='output-cmd-pre'>USER //</span><span class='output-cmd'>" + cmd + "</span>");
+	}
 
 	$.each(print, function(index, value) {
 		cmd = "";
@@ -131,7 +135,7 @@ var cmds = {
 					$("#outputs").html("");
 					output(result.split("\n"), true, true); 
 				} else {
-					output(["Error: Decryption Failed!"]);
+					output(["Error: Invalid Encryption Key!"]);
 				}
 			});
 		} else {
@@ -157,11 +161,8 @@ var cmds = {
 				var encrypted = cryptico.encrypt(data, publicKey);
 				
 				$("#outputs").html("");
-					output(["Vector OS " + version + " (TERMINAL MODE)", "Created by Clay Lockwood", "", "A low bandwidth or unstable connection environment was detected and Terminal Mode has been automatically enabled,",
-							"This action was taken to decrease data traffic usage to maintain a smooth and stable connection to the remote server.", "", " Type 'commands' to begin", ""], false, true);
 				
-				console.log("Encryption Key: " + key);
-				console.log(encrypted.cipher);
+				output(["Encryption Key: " + key, "********************************************************************************************************************************", encrypted.cipher, ""], false, true);
 			});
 		}
 	},
