@@ -78,7 +78,7 @@ var cmds = {
 			"clear                :: [ clears all printed information on the screen ]",
 			"view    (file)       :: [ used to view the content of a specified file ]",
 			"decrypt (file) (key) :: [ used to decrypt and view encrypted files     ]",
-			"encrypt (url) (key) :: [ encrypts a file at the speified URL location ]",
+			"encrypt (file) (key) :: [ encrypts a file with a name and key is given ]",
 			"&nbsp;"
 		];
 		
