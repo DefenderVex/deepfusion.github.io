@@ -61,7 +61,7 @@ var cmds = {
 			"|---------------|--------------------|-------------------|",
 			"| profile.txt   | Text Document      | 721 Bytes         |",
 			"| relations.txt | Text Document      | 903 Bytes         |",
-			"| aegis.enyt    | Encrypted Document | 000 Bytes         |",
+			"| aegis.enyt    | Encrypted Document | 1,753 Bytes       |",
 			"|---------------|--------------------|-------------------|",
 			"&nbsp;"
 		];
