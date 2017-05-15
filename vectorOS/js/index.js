@@ -122,8 +122,8 @@ var cmds = {
 			output(["Error: '" + file + "' is not a valid encrypted file!"]);
 		} else if ($.inArray(file, files) > -1) {
 			$.get("http://defendervex.github.io/vectorOS/" + file, function(data) {
-				var decrypted = CryptoJS.AES.decrypt(data, key);
-				data = decrypted.toString(CryptoJS.enc.Utf8);
+				var RSA = cryptico.generateRSAKey(key, 512);
+				var result = cryptico.decrypt(data, RSA).plaintext;
 				
 				if (data.startsWith("Decrypted File")) {
 					$("#outputs").html("");
@@ -147,9 +147,13 @@ var cmds = {
 			output(["Error: No valid encrypt key was specified!"]);
 		} else {
 			$.get(url, function(data) {
-				var encrypted = CryptoJS.AES.encrypt(data, key);
+				var RSA = cryptico.generateRSAKey(key, 512);
+				var publicKey = cryptico.publicKeyString(RSA);
+				
+				var encrypted = cryptico.encrypt(data, publicKey);
+				
 				$("#outputs").html("");
-				output(encrypted); 
+				output(encrypted.cipher); 
 			});
 		}
 	},
