@@ -81,14 +81,14 @@ var cmds = {
 		output(print, true, true);
 	},
 	
-	"profile": function() {
+	"profile.txt": function() {
 		$("#outputs").html("");
 		$.get("http://defendervex.github.io/vectorOS/profile.txt", function(data) {
 			output(data.split("\n"), true, true);
 		});
 	},
 	
-	"relations": function() {		
+	"relations.txt": function() {		
 		$("#outputs").html("");
 		$.get("http://defendervex.github.io/vectorOS/relations.txt", function(data) {
 			output(data.split("\n"), true, true);
