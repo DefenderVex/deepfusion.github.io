@@ -63,7 +63,7 @@ var cmds = {
 			"|---------------|--------------------|-------------------|",
 			"| File Name     | File Type          | File Size (Bytes) |",
 			"|---------------|--------------------|-------------------|",
-			"| profile.txt   | Text Document      | 721 Bytes         |",
+			"| profile.txt   | Text Document      | 3,445 Bytes       |",
 			"| relations.txt | Text Document      | 903 Bytes         |",
 			"| aegis.enyt    | Encrypted Document | 1,753 Bytes       |",
 			"|---------------|--------------------|-------------------|",
@@ -201,58 +201,58 @@ $('.console-input').on('keypress', function(event) {
 particlesJS('particles-js', {
 	'particles': {
 	'number': {
-	'value': 100
+		'value': 100
 	},
 	'color': {
-	'value': '#fca533'
+		'value': '#fca533'
 	},
 	'shape': {
-	'type': 'triangle',
-	'polygon': {
-	'nb_sides': 5
-	}
+		'type': 'triangle',
+		'polygon': {
+			'nb_sides': 6
+		}
 	},
 	'opacity': {
-	'value': 0.06,
-	'random': false
+		'value': 0.06,
+		'random': false
 	},
 	'size': {
-	'value': 11,
-	'random': true
+		'value': 10,
+		'random': true
 	},
 	'line_linked': {
-	'enable': true,
-	'distance': 150,
-	'color': '#fca533',
-	'opacity': 0.4,
-	'width': 1
+		'enable': true,
+		'distance': 150,
+		'color': '#fca533',
+		'opacity': 0.4,
+		'width': 1
 	},
 	'move': {
-	'enable': true,
-	'speed': 2,
-	'direction': 'none',
-	'random': false,
-	'straight': false,
-	'out_mode': 'out',
-	'bounce': false
+		'enable': true,
+		'speed': 1.5,
+		'direction': 'none',
+		'random': false,
+		'straight': false,
+		'out_mode': 'out',
+		'bounce': false
 	}
 	},
 	'interactivity': {
-	'detect_on': 'canvas',
-	'events': {
-	'onhover': {
-	'enable': false
-	},
-	'onclick': {
-	'enable': true,
-	'mode': 'push'
-	},
-	'resize': true
+		'detect_on': 'canvas',
+		'events': {
+			'onhover': {
+			'enable': false
+		},
+		'onclick': {
+			'enable': true,
+			'mode': 'push'
+		},
+		'resize': true
 	},
 	'modes': {
-	'push': {
-	'particles_nb': 4
-	}
+		'push': {
+		'particles_nb': 4
+		}
 	}
 	},
 	'retina_detect': true
