@@ -127,9 +127,9 @@ var cmds = {
 				var RSA = cryptico.generateRSAKey(key, 512);
 				var result = cryptico.decrypt(data, RSA).plaintext;
 				
-				if (data.startsWith("Decrypted File")) {
+				if (result.startsWith("Decrypted File")) {
 					$("#outputs").html("");
-					output(data.split("\n"), true, true); 
+					output(result.split("\n"), true, true); 
 				} else {
 					output(["Error: Decryption Failed!"]);
 				}
