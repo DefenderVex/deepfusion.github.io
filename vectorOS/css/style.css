@@ -24,6 +24,7 @@ body {
 	background-image: url("pattern.png");
 	background-position: center;
 	z-index: 100;
+	max-width: 100%;
 }
 
 .console-input {

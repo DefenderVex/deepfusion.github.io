@@ -78,7 +78,7 @@ var cmds = {
 			"clear                :: [ clears all printed information on the screen ]",
 			"view    (file)       :: [ used to view the content of a specified file ]",
 			"decrypt (file) (key) :: [ used to decrypt and view encrypted files     ]",
-			"encrypt (url)  (key) :: [ encrypts a file at the speified URL location ]",
+			"encrypt (url) (key) :: [ encrypts a file at the speified URL location ]",
 			"&nbsp;"
 		];
 		
@@ -107,6 +107,8 @@ var cmds = {
 	},
 	
 	"decrypt": function(dat) {	
+		dat = dat.split(' ')
+	
 		var file = dat[0]
 		var key = dat[1]
 	
@@ -129,7 +131,7 @@ var cmds = {
 					$("#outputs").html("");
 					output(data.split("\n"), true, true); 
 				} else {
-					output(["Error: Decryption Failed! (Invalid Key)"]);
+					output(["Error: Decryption Failed!"]);
 				}
 			});
 		} else {
@@ -138,22 +140,28 @@ var cmds = {
 	},
 	
 	"encrypt": function(dat) {
-		var url = dat[0]
+		dat = dat.split(' ')
+		
+		var file = dat[0]
 		var key = dat[1]
 		
-		if (!url) {
-			output(["Error: No file URL was specified!"]);
+		if (!file) {
+			output(["Error: No file was specified!"]);
 		} else if (!key) {
 			output(["Error: No valid encrypt key was specified!"]);
 		} else {
-			$.get(url, function(data) {
+			$.get("http://defendervex.github.io/vectorOS/" + file, function(data) {
 				var RSA = cryptico.generateRSAKey(key, 512);
 				var publicKey = cryptico.publicKeyString(RSA);
 				
 				var encrypted = cryptico.encrypt(data, publicKey);
 				
 				$("#outputs").html("");
-				output(encrypted.cipher); 
+					output(["Vector OS " + version + " (TERMINAL MODE)", "Created by Clay Lockwood", "", "A low bandwidth or unstable connection environment was detected and Terminal Mode has been automatically enabled,",
+							"This action was taken to decrease data traffic usage to maintain a smooth and stable connection to the remote server.", "", " Type 'commands' to begin", ""], false, true);
+				
+				console.log("Encryption Key: " + key);
+				console.log(encrypted.cipher);
 			});
 		}
 	},
