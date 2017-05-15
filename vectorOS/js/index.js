@@ -1,5 +1,6 @@
 // Focus
 $('.console-input').focus();
+var version = "2.0.1";
 
 // Force Lowercase Input
 $('.console-input').keyup(function() {
@@ -47,57 +48,115 @@ var newLine = "<br/> &nbsp;";
 var cmds = {
 	"clear": function() {
 		$("#outputs").html("");
-		output(["Vector OS 2.0 (TERMINAL MODE)", "Created by Clay Lockwood", "", "A low bandwidth or unstable connection environment was detected and Terminal Mode has been automatically enabled,",
+		output(["Vector OS " + version + " (TERMINAL MODE)", "Created by Clay Lockwood", "", "A low bandwidth or unstable connection environment was detected and Terminal Mode has been automatically enabled,",
 				"This action was taken to decrease data traffic usage to maintain a smooth and stable connection to the remote server.", "", " Type 'commands' to begin", ""], false, true);
 	},
 	
 	"list": function() {
 		var print = [
 			"file directory",
-			"*************************************************",
-			"|---------------|-----------|-------------------|",
-			"| File Name     | File Type | File Size (Bytes) |",
-			"|---------------|-----------|-------------------|",
-			"| profile.txt   | Document  | 721 Bytes         |",
-			"| relations.txt | Document  | 903 Bytes         |",
-			"|---------------|-----------|-------------------|",
+			"**********************************************************",
+			"|---------------|--------------------|-------------------|",
+			"| File Name     | File Type          | File Size (Bytes) |",
+			"|---------------|--------------------|-------------------|",
+			"| profile.txt   | Text Document      | 721 Bytes         |",
+			"| relations.txt | Text Document      | 903 Bytes         |",
+			"| aegis.enyt    | Encrypted Document | 000 Bytes         |",
+			"|---------------|--------------------|-------------------|",
 			"&nbsp;"
 		];
 		
-		$("#outputs").html("");
-		output(print, true, true);
+		//$("#outputs").html("");
+		output(print, true);
 	},
 	
 	"commands": function() {
 		var print = [
 			"commands",
-			"*********************************************************",
-			"list  :: [ prints all files and programs to the screen  ]",
-			"clear :: [ clears all printed information on the screen ]",
+			"************************************************************************",
+			"list                 :: [ prints all files and programs to the screen  ]",
+			"clear                :: [ clears all printed information on the screen ]",
+			"view    (file)       :: [ used to view the content of a specified file ]",
+			"decrypt (file) (key) :: [ used to decrypt and view encrypted files     ]",
+			"encrypt (url)  (key) :: [ encrypts a file at the speified URL location ]",
 			"&nbsp;"
 		];
 		
-		$("#outputs").html("");
-		output(print, true, true);
+		//$("#outputs").html("");
+		output(print, true);
 	},
 	
-	"profile.txt": function() {
-		$("#outputs").html("");
-		$.get("http://defendervex.github.io/vectorOS/profile.txt", function(data) {
-			output(data.split("\n"), true, true);
-		});
+	"view": function(file) {		
+		var files = [
+			"profile.txt",
+			"relations.txt"
+		];
+		
+		if (!file) {
+			output(["Error: No text file was specified!"]);
+		} else if (!file.endsWith(".txt")) {
+			output(["Error: '" + file + "' is not a valid text file!"]);
+		} else if ($.inArray(file, files) > -1) {
+			$("#outputs").html("");
+			$.get("http://defendervex.github.io/vectorOS/" + file, function(data) {
+				output(data.split("\n"), true, true);
+			});
+		} else {
+			output(["Error: '" + file + "' does not exist!"]);
+		}
 	},
 	
-	"relations.txt": function() {		
-		$("#outputs").html("");
-		$.get("http://defendervex.github.io/vectorOS/relations.txt", function(data) {
-			output(data.split("\n"), true, true);
-		});
+	"decrypt": function(dat) {	
+		var file = dat[0]
+		var key = dat[1]
+	
+		var files = [
+			"aegis.enyt"
+		];
+		
+		if (!file) {
+			output(["Error: No encrypted file was specified!"]);
+		} else if (!key) {
+			output(["Error: No valid encrypt key was specified!"]);
+		} else if (!file.endsWith(".enyt")) {
+			output(["Error: '" + file + "' is not a valid encrypted file!"]);
+		} else if ($.inArray(file, files) > -1) {
+			$.get("http://defendervex.github.io/vectorOS/" + file, function(data) {
+				var decrypted = CryptoJS.AES.decrypt(data, key);
+				data = decrypted.toString(CryptoJS.enc.Utf8);
+				
+				if (data.startsWith("Decrypted File")) {
+					$("#outputs").html("");
+					output(data.split("\n"), true, true); 
+				} else {
+					output(["Error: Decryption Failed! (Invalid Key)"]);
+				}
+			});
+		} else {
+			output(["Error: '" + file + "' does not exist!"]);
+		}
+	},
+	
+	"encrypt": function(dat) {
+		var url = dat[0]
+		var key = dat[1]
+		
+		if (!url) {
+			output(["Error: No file URL was specified!"]);
+		} else if (!key) {
+			output(["Error: No valid encrypt key was specified!"]);
+		} else {
+			$.get(url, function(data) {
+				var encrypted = CryptoJS.AES.encrypt(data, key);
+				$("#outputs").html("");
+				output(encrypted); 
+			});
+		}
 	},
 };
 
 // Boot Output
-output(["Vector OS 2.0 (TERMINAL MODE)", "Created by Clay Lockwood", "", "A low bandwidth or unstable connection environment was detected and Terminal Mode has been automatically enabled,",
+output(["Vector OS " + version + " (TERMINAL MODE)", "Created by Clay Lockwood", "", "A low bandwidth or unstable connection environment was detected and Terminal Mode has been automatically enabled,",
 		"This action was taken to decrease data traffic usage to maintain a smooth and stable connection to the remote server.", "", " Type 'commands' to begin", ""], false, true);
 
 // Get User Command
@@ -118,12 +177,7 @@ $('.console-input').on('keypress', function(event) {
 		}
 		
 		} else {
-			if (str.endsWith(".txt")) {
-				output(["Error: No such file!"]);
-			} else {
-				output(["Error: Command or file not found!"]);
-			}
-			
+			output(["Error: Command or file not found!"]);
 		}
 		
 		$(this).val("");
