@@ -61,7 +61,7 @@ var cmds = {
 			"|---------------|--------------------|-------------------|",
 			"| profile.txt   | Text Document      | 721 Bytes         |",
 			"| relations.txt | Text Document      | 903 Bytes         |",
-			//"| aegis.enyt    | Encrypted Document | 000 Bytes         |",
+			"| aegis.enyt    | Encrypted Document | 000 Bytes         |",
 			"|---------------|--------------------|-------------------|",
 			"&nbsp;"
 		];
@@ -111,7 +111,7 @@ var cmds = {
 		var key = dat[1]
 	
 		var files = [
-			//"aegis.enyt"
+			"aegis.enyt"
 		];
 		
 		if (!file) {
