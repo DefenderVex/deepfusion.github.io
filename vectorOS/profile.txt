@@ -26,7 +26,7 @@ File: profile
 ||----------------------------------------------------------------------------------------------------------------||
 ||  2077: Isolated from his normal workspace by the quarantine Clay finishes creating VectorOS 2.0 which he       ||
 ||  chooses not to release to the public. It's incredible simulation software allows it to be used advanced       ||
-||  biological simulations of the whole body (with the notable acception of the brain). This let's Clay test      ||
+||  biological simulations of the whole body (with the notable acception of neurons). This lets Clay test         ||
 ||  the systems inside his new 'Aegis Project' and how it functions in real-world situations.                     ||
 ||----------------------------------------------------------------------------------------------------------------||
 &nbsp;
