@@ -34,10 +34,10 @@ body {
 }
 
 #window{
-	/*background-image: url("pattern.png");
+	background-image: url("pattern.png");
 	background-color: rgb(12, 12, 12);
 	background-position: center;
-	animation: pulse 4s infinite;*/
+	animation: pulse 4s infinite;
 }
 
 #window::before {
