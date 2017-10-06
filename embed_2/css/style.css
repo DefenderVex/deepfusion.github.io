@@ -28,7 +28,7 @@ body {
     color: rgb(21, 255, 18);
     font-family: 'Share Tech Mono';
     font-size: 24px;
-	/*font-weight: bolder;*/
+	font-weight: bolder;
 	overflow: hidden;
 	text-shadow: 2px 2px 5px rgb(11, 75, 8);
 }
@@ -37,7 +37,7 @@ body {
 	/*background-image: url("pattern.png");*/
 	background-color: rgb(12, 12, 12);
 	background-position: center;
-	animation: pulse 4s infinite;
+	/*animation: pulse 4s infinite;*/
 }
 
 #window::before {
