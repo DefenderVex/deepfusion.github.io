@@ -8,15 +8,16 @@ window.addEventListener('load', function()
 {
   var options = {
     'amount' : 1000,
-    'size' : [8,20],				
+    'size' : [8, 20],				
     'rotation' : [1, 2],
     'speed' : [20, 30],
     'swing' : [0.1, 0.5],				
     'amplitude' : [30, 50],
-    'alpha' : [0.1,0.95],
+    'alpha' : [0.1, 0.95],
     'images' : [
 		"http://defendervex.github.io/claymoregaming/metro/img/ember_1.png",
-		"http://defendervex.github.io/claymoregaming/metro/img/ember_2.png"
+		"http://defendervex.github.io/claymoregaming/metro/img/ember_2.png",
+		"http://defendervex.github.io/claymoregaming/metro/img/ember_3.png"
 	]
   };
 
