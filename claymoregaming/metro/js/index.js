@@ -14,7 +14,10 @@ window.addEventListener('load', function()
     'swing' : [0.1, 0.5],				
     'amplitude' : [30, 50],
     'alpha' : [0.1,0.95],
-    'images' : ["http://defendervex.github.io/claymoregaming/img/ember_1.png"]
+    'images' : [
+		"http://defendervex.github.io/claymoregaming/metro/img/ember_1.png",
+		"http://defendervex.github.io/claymoregaming/metro/img/ember_2.png"
+	]
   };
 
   jsCanvasSnow.init( "particle_canvas", options );
