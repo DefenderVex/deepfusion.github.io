@@ -17,3 +17,8 @@ body {
     z-index: 3;
     pointer-events: none;
 }
+
+.logos {
+	text-align: center;
+	margin-top: 10%;
+}
