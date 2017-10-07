@@ -6,3 +6,14 @@ body {
 	background-repeat: no-repeat;
 	overflow: hidden;
 }
+
+.snow-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    overflow: hidden;
+    z-index: 3;
+    pointer-events: none;
+}
