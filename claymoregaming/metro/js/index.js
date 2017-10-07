@@ -1,3 +1,14 @@
+var loop = new Audio("https://www.dropbox.com/s/8rtbyd8l84ld3n9/02%20-%20Some%20Place%20We%20Called%20Home%20-%20This%20War%20of%20Mine%20OST%20by%20Piotr%20Musial.mp3?dl=1");
+
+loop.addEventListener('ended', function() {
+	this.currentTime = 0;
+	this.play();
+}, false);
+
+loop.play();
+
+loop.volume = .5;
+
 window.addEventListener('resize', function()
                         {
                           jsCanvasSnow.resize(window.innerWidth, window.innerHeight);
