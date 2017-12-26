@@ -1,4 +1,4 @@
-ERROR: FILE DATA CORRUPTION DETECTED -- PARTIAL RECOVERY SUCCESSFUL
+ERROR: FILE DATA CORRUPTION DETECTED -- PARTIAL RECOVERY SUCCESSFUL (38%)
 Decrypted File: "Project Simga Twelve"
 ********************************************************************************************************************************
 
@@ -27,20 +27,10 @@ intergrations is expected to cause large scale cancer and death of the subject b
 this the data will be invaluable to our work.
 --------------------------------------------------------------------------------------------------------------------------------
 
-Subject 03:
---------------------------------------------------------------------------------------------------------------------------------
-[ERROR :: DATA UNRECOVERED]
---------------------------------------------------------------------------------------------------------------------------------
-
 Subject 05:
 --------------------------------------------------------------------------------------------------------------------------------
 Prototype five will be created with the use of direct mechnical augmentation, said augments have been acquired from the ARS
 security research division.
---------------------------------------------------------------------------------------------------------------------------------
-
-Subject 07:
---------------------------------------------------------------------------------------------------------------------------------
-[ERROR :: DATA DELETED]
 --------------------------------------------------------------------------------------------------------------------------------
 
 Subject 09:
@@ -48,9 +38,4 @@ Subject 09:
 Xeno-Cells, the #### #### ##### technology ######## are based off will be added to the subject along with a commonly available,
 yet highly effective gene treatment used to treat patients with nanite augmentations to prevent immune rejection and enchance
 cross cell-nanite communication during phase two of the gestation process. Expected results are unknown.
---------------------------------------------------------------------------------------------------------------------------------
-
-Subject 12:
---------------------------------------------------------------------------------------------------------------------------------
-[ERROR :: DATA DELETED]
 --------------------------------------------------------------------------------------------------------------------------------
