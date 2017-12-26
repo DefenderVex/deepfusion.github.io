@@ -63,7 +63,7 @@ var cmds = {
 			"|------------------|-----------------|-------------------|",
 			"| File Name        | File Type       | File Size (Bytes) |",
 			"|------------------|-----------------|-------------------|",
-			"| sigma-twelve.txt | Text Document   | {UNKNOWN} Bytes   |",
+			"| sigma_twelve.txt | Text Document   | {UNKNOWN} Bytes   |",
 			"|------------------|-----------------|-------------------|",
 			"&nbsp;"
 		];
@@ -90,7 +90,7 @@ var cmds = {
 	
 	"view": function(file) {		
 		var files = [
-			"sigma-twelve.txt"
+			"sigma_twelve.txt"
 		];
 		
 		if (!file) {
