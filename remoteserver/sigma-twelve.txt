@@ -1,5 +1,5 @@
 ERROR: FILE DATA CORRUPTION DETECTED -- PARTIAL RECOVERY SUCCESSFUL (38%)
-Decrypted File: "Project Simga Twelve"
+Decrypted File: "Project Sigma Twelve"
 ********************************************************************************************************************************
 
 Project Directive
