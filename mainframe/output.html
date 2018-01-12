@@ -1,29 +1,17 @@
 <html>
 	<head>
-		<script src="speakClient.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		
+		<script src="speakClient.js"></script>
+		<script src="java.js"></script>
 		<script>
-			//function getURLParameter(sParam) {
-			//	var sPageURL = window.location.search.substring(1);
-			//	
-			//	var sURLVariables = sPageURL.split('&');
-			//	
-			//	for (var i = 0; i < sURLVariables.length; i++) {
-			//		var sParameterName = sURLVariables[i].split('=');
-			//		
-			//		if (sParameterName[0] == sParam) {
-			//			return sParameterName[1];
-			//		}
-			//	}
-			//}​
+
 		</script>
 	</head>
 	
 	<body>
 		<script>
-			//var parameter = getURLParameter("text");
-			//var text = decodeURIComponent(parameter);
+			var parameter = getURLParameter("text");
+			var text = decodeURIComponent(parameter);
 			speak("What a primitive question from a primitive mind. Do you have something you wish to purchase or are you going to continue to waste my time with your meaningless inquiries?", {amplitude: 100, wordgap: 0, pitch: 0, speed: 175});
 		</script>
 		
