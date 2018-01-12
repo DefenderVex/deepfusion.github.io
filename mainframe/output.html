@@ -15,14 +15,15 @@
 						return sParameterName[1];
 					}
 				}
-			}​
+			}​;
 		</script>
 	</head>
 	
 	<body>
 		<script>
-			var text = GetURLParameter("text");
-			speak("This is a test.", {amplitude: 100, wordgap: 0, pitch: 0, speed: 175});
+			var parameter = GetURLParameter("text");
+			var text = decodeURIComponent(parameter);
+			speak(text, {amplitude: 100, wordgap: 0, pitch: 0, speed: 175});
 		</script>
 		
 		<div id="audio"></div>
