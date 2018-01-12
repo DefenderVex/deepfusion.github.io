@@ -10,9 +10,9 @@
 	
 	<body>
 		<script>
-			var parameter = getURLParameter("text");
+			var parameter = getParameterByName("text");
 			var text = decodeURIComponent(parameter);
-			speak("What a primitive question from a primitive mind. Do you have something you wish to purchase or are you going to continue to waste my time with your meaningless inquiries?", {amplitude: 100, wordgap: 0, pitch: 0, speed: 175});
+			speak(text, {amplitude: 100, wordgap: 0, pitch: 0, speed: 175});
 		</script>
 		
 		<div id="audio"></div>
