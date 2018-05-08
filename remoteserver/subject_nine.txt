@@ -1,7 +1,0 @@
-NOTICE: PARTIAL HIGH LEVEL ENCRYPTION DETECTED - FULL DOCUMENT UNAVAILABLE
-Decrypted File: "Project Sigma Twelve :: Subject 09"
-********************************************************************************************************************************
-
-|------------------------------|-------------------|
-| GESTATION ID :: S12:09-DELTA | STATUS :: UNKNOWN |
-|------------------------------|-------------------|
