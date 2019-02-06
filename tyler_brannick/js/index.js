@@ -1,6 +1,6 @@
 // Terminal Bio 3.0 By Vex //
-var click = new Audio("sound/char_scroll.wav");
-var loop = new Audio("sound/fan_loop.wav");
+var click = new Audio("http://defendervex.github.io/tyler_brannick/sound/char_scroll.wav");
+var loop = new Audio("http://defendervex.github.io/tyler_brannick/sound/fan_loop.wav");
 
 loop.addEventListener('ended', function() {
 	this.currentTime = 0;
@@ -46,7 +46,7 @@ $.fn.typewriter = function() {
 					delay = 0;
 				}else{
 					setTimeout(typewriting, 1);
-				}	
+				}
 			}
 		}
 		typewriting();
