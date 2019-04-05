@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta http-equiv="Refresh" content="1800">
+	</head>
+	<body style="background-color: black; padding: 0; margin: 0;">
+		<script language="javascript">
+			var curindex = 0
+
+			var adverts = [
+				["img/BioStat.gif", 14920],
+			]
+
+			var preload = []
+
+			for (n = 0; n < adverts.length; n++) {
+				preload[n] = new Image()
+				preload[n].src = adverts[n][0]
+			}
+
+			document.write('<img name="defaultimage" src="' + adverts[Math.floor(Math.random() * (adverts.length))][0] + '">')
+
+			function rotateimage() {
+				if (curindex == (tempindex = Math.floor(Math.random() * (adverts.length)))) {
+					curindex = curindex == 0? 1 : curindex - 1
+				} else
+					curindex = tempindex
+					document.images.defaultimage.src = adverts[curindex][0]
+			}
+
+			setInterval("rotateimage()", adverts[curindex][1])
+		</script>
+	</body>
+</html>
