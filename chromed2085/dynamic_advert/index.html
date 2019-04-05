@@ -10,28 +10,40 @@
 				["img/Praxis.gif", 15130],
 			]
 
-			var curindex = 0
+			var index = 0
 			var preload = []
+			var unused = []
+
+			for (i = 0; i < adverts.length; i++) {
+				unused[i] = i
+			}
 
 			for (n = 0; n < adverts.length; n++) {
 				preload[n] = new Image()
 				preload[n].src = adverts[n][0]
 			}
 
-			document.write('<img name="defaultimage" src="' + adverts[0][0] + '">')
-			curindex++
+			index = unused[Math.floor(Math.random() * unused.length)]
+
+			var i = unused.indexOf(index); if (i > -1) {unused.splice(i, 1)}
+
+			document.write('<img name="defaultimage" src="' + adverts[index][0] + '">')
 
 			function rotateimage() {
-				if (curindex >= adverts.length) {
-					curindex = 0
+				if (unused.length <= 0) {
+					for (i = 0; i <= adverts.length-1; i++) {
+						unused[i] = i
+					}
 				}
 
-				document.images.defaultimage.src = adverts[curindex][0]
+				index = unused[Math.floor(Math.random() * unused.length)]
 
-				curindex++
+				var i = unused.indexOf(index); if (i > -1) {unused.splice(i, 1)}
+
+				document.images.defaultimage.src = adverts[index][0]
 			}
 
-			setInterval("rotateimage()", adverts[curindex][1])
+			setInterval("rotateimage()", adverts[index][1])
 		</script>
 	</body>
 </html>
