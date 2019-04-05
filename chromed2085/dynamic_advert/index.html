@@ -18,14 +18,17 @@
 				preload[n].src = adverts[n][0]
 			}
 
-			document.write('<img name="defaultimage" src="' + adverts[Math.floor(Math.random() * (adverts.length))][0] + '">')
+			document.write('<img name="defaultimage" src="' + adverts[0][0] + '">')
+			curindex++
 
 			function rotateimage() {
-				if (curindex == (tempindex = Math.floor(Math.random() * (adverts.length)))) {
-					curindex = curindex == 0? 1 : curindex - 1
-				} else
-					curindex = tempindex
-					document.images.defaultimage.src = adverts[curindex][0]
+				if (curindex >= adverts.length) {
+					curindex = 0
+				}
+
+				document.images.defaultimage.src = adverts[curindex][0]
+
+				curindex++
 			}
 
 			setInterval("rotateimage()", adverts[curindex][1])
