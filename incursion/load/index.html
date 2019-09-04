@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta http-equiv="Refresh" content="1800">
+	</head>
+	<body style="background-color: black; padding: 0; margin: 0; overflow: hidden;">
+		<script language="javascript">
+			var adverts = [
+				//["img/eye.gif"],
+				//["img/melting.gif"],
+				["img/girl.gif"],
+				["img/swing.gif"],
+				["img/shy.gif"],
+				["img/torture.gif"],
+				["img/slender.gif"],
+				["img/clown.gif"],
+				["img/hag.gif"],
+				["img/arms.gif"],
+			]
+
+			var index = 0
+			var preload = []
+			var unused = []
+
+			for (i = 0; i < adverts.length; i++) {
+				unused[i] = i
+			}
+
+			for (n = 0; n < adverts.length; n++) {
+				preload[n] = new Image()
+				preload[n].src = adverts[n][0]
+			}
+
+			index = unused[Math.floor(Math.random() * unused.length)]
+
+			var i = unused.indexOf(index); if (i > -1) {unused.splice(i, 1)}
+
+			document.write('<img name="defaultimage" style="position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0; width:100%; height: 100%;" src="' + adverts[index][0] + '">')
+
+			function rotateimage() {
+				if (unused.length <= 0) {
+					for (i = 0; i <= adverts.length-1; i++) {
+						unused[i] = i
+					}
+				}
+
+				index = unused[Math.floor(Math.random() * unused.length)]
+
+				var i = unused.indexOf(index); if (i > -1) {unused.splice(i, 1)}
+
+				document.images.defaultimage.src = adverts[index][0]
+			}
+
+			setInterval("rotateimage()", 5000)
+		</script>
+	</body>
+</html>
