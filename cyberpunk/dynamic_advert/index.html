@@ -5,15 +5,13 @@
 	<body style="background-color: black; padding: 0; margin: 0; overflow: hidden;">
 		<script language="javascript">
 			function getVersion() {
-				var Connect = new XMLHttpRequest();
-				Connect.open("GET", "version.xml", true);
-				Connect.setRequestHeader("Content-Type", "text/xml");
-				Connect.send(null);
+				var xhttp = new XMLHttpRequest();
+				xhttp.open("GET", "version.xml", true);
+				xhttp.send();
 				
-				var Responce = Connect.responseXML;
-				var VersionNumber = Responce.childNodes[0];
+				var Responce = xhttp.responseXML;
 				
-				return Responce
+				return Responce.getElementsByTagName('version')[0];
 			}
 			
 			alert(getVersion());
