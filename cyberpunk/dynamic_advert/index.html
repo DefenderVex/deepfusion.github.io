@@ -7,11 +7,12 @@
 			function getVersion() {
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("GET", "http://defendervex.github.io/cyberpunk/dynamic_advert/version.xml", true);
+				xhttp.onreadystatechange = function () {
+					if (xhttp.readyState == 4) {
+						return xhttp.responseXML;
+					}
+				};
 				xhttp.send();
-				
-				var xml = xhttp.responseXML;
-				
-				return xml.childNodes[0];
 			}
 			
 			alert(getVersion());
