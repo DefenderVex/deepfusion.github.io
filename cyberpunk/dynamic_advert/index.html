@@ -4,6 +4,20 @@
 	</head>
 	<body style="background-color: black; padding: 0; margin: 0; overflow: hidden;">
 		<script language="javascript">
+			function getVersion() {
+				var Connect = new XMLHttpRequest();
+				Connect.open("GET", "version.xml", true);
+				Connect.setRequestHeader("Content-Type", "text/xml");
+				Connect.send(null);
+				
+				var Responce = Connect.responseXML;
+				var VersionNumber = Responce.childNodes[0];
+				
+				return Responce
+			}
+			
+			alert(getVersion());
+		
 			// /paneladd http://defendervex.github.io/cyberpunk/dynamic_advert/index.html 980 540 1.4
 			var adverts = [
 				//["img/BioStat.gif", 14920],
