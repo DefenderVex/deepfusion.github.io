@@ -6,12 +6,12 @@
 		<script language="javascript">
 			function getVersion() {
 				var xhttp = new XMLHttpRequest();
-				xhttp.open("GET", "version.xml", true);
+				xhttp.open("GET", "http://defendervex.github.io/cyberpunk/dynamic_advert/version.xml", true);
 				xhttp.send();
 				
-				var Responce = xhttp.responseXML;
+				var xml = xhttp.responseXML;
 				
-				return Responce
+				return xml.childNodes[0];
 			}
 			
 			alert(getVersion());
