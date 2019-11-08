@@ -38,17 +38,14 @@
 
 			function rotateimage() {
 				if (unused.length <= 0) {
-					//for (i = 0; i <= adverts.length-1; i++) {
-					//	unused[i] = i
-					//}
 					location.reload();
+				} else {
+					index = unused[Math.floor(Math.random() * unused.length)]
+
+					var i = unused.indexOf(index); if (i > -1) {unused.splice(i, 1)}
+
+					document.images.defaultimage.src = adverts[index][0]
 				}
-
-				index = unused[Math.floor(Math.random() * unused.length)]
-
-				var i = unused.indexOf(index); if (i > -1) {unused.splice(i, 1)}
-
-				document.images.defaultimage.src = adverts[index][0]
 			}
 
 			setInterval("rotateimage()", adverts[index][1])
