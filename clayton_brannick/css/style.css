@@ -1,5 +1,5 @@
 /* Terminal Bio 3.0 By Vex */
-@import url('http://fonts.googleapis.com/css?family=Share+Tech+Mono');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
 
 @keyframes pulse {
     0% {
@@ -56,7 +56,7 @@ body {
 
 #terminal{
 	margin-left: auto;
-  margin-right: auto;
+	margin-right: auto;
 	height: 100vh;
 	width: 1261px;
 	padding-top: 12px;
