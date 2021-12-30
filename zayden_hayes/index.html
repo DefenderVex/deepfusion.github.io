@@ -2,10 +2,19 @@
 	<head>
 		<title>Zayden Hayes</title>
 		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	</head>
 
 	<body>
-		<div class="content" id="content" style="display: block;">
+		<div class="content" id="splash" onclick="CloseSplash()" style="display: block;">
+			<div class="center">
+				<div class="container">
+					<h1 style="text-align: center;">CLICK ANYWHERE TO CONTINUE</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="content" id="content">
 			<div class="center">
 				<div class="container">
 					<hr>
@@ -16,8 +25,7 @@
 					<hr>
 					<img src="images/info.png">
 					<hr>
-					<a>"THERE ARE NONE HERE I KNOW"</a>
-					<!--<a onclick="ShowRelations()">"THOSE WHO I KNOW"</a>-->
+					<a onclick="ShowRelations()">"THOSE WHO I KNOW"</a>
 					<hr>
 				</div>
 			</div>
@@ -27,13 +35,13 @@
 			<div class="center">
 				<div class="container">
 					<hr>
-					<div id="test" style="display: none;">
+					<div id="profile_sia" style="display: none;">
 						<div class="profile">
 							<div class="text">
-								<h2 class="hated">Hated</h2>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+								<h2 class="liked">Sia Baquera</h2>
+								<p>"I didn't actually ever plan to run into you again, I got lucky and got out before AC pretty much exploded like a scene out of Death Stranding and I wasn't exactly planning on coming back. Look it's not like it isn't nice to know you're not dead but I left for a reason."</p>
 							</div>
-							<div class="picture"><img src="images/placeholder.png" style="transform: rotate(0deg);"></div>
+							<div class="picture"><img src="images/profiles/sia.png" style="transform: rotate(0deg);"></div>
 						</div>
 					</div>
 					<hr>
@@ -51,37 +59,11 @@
 					<hr>
 					<div class="polaroids">
 						<div class="image">
-							<img src="images/placeholder.png" style="transform: rotate(0deg);">
-							<h2 class="feared" onclick="ShowPopup('test')">Feared</h2>
-						</div>
-						<div class="image">
-							<img src="images/placeholder.png" style="transform: rotate(-2deg);">
-							<h2 class="hated">Hated</h2>
-						</div>
-						<div class="image">
-							<img src="images/placeholder.png" style="transform: rotate(1deg);">
-							<h2 class="unliked">Unliked</h2>
-						</div>
-						<div class="image">
-							<img src="images/placeholder.png" style="transform: rotate(2deg);">
-							<h2 class="neutral">Neutral</h2>
+							<img src="images/profiles/sia.png" style="transform: rotate(0deg);">
+							<h2 class="liked" onclick="ShowPopup('profile_sia')">Sia Baquera</h2>
 						</div>
 					</div>
-					<hr class="polaroids">
-					<div class="polaroids">
-						<div class="image">
-							<img src="images/placeholder.png" style="transform: rotate(-1deg);">
-							<h2 class="liked">Liked</h2>
-						</div>
-						<div class="image">
-							<img src="images/placeholder.png" style="transform: rotate(0deg);">
-							<h2 class="admired">Admired</h2>
-						</div>
-						<div class="image">
-							<img src="images/placeholder.png" style="transform: rotate(3deg);">
-							<h2 class="idolized">Idolized</h2>
-						</div>
-					</div>
+					<!--<hr class="polaroids">-->
 					<hr>
 					<a onclick="ShowContent()">"THAT WHAT I AM"</a>
 					<hr>
@@ -90,11 +72,40 @@
 		</div>
 
 		<script>
+			var sound_page = new Audio("sounds/window_open.wav");
+			var sound_hover = new Audio("sounds/button_hover.wav");
+			var sound_click = new Audio("sounds/button_click.wav");
+			var sound_bg = new Audio("sounds/background.mp3");
+
 			var relations = document.getElementById("relations");
 			var content = document.getElementById("content");
 			var popups = document.getElementById("popups");
 
 			var active = "";
+
+			$(document).ready(function() {
+				var splash = document.getElementById("splash");
+				splash.style.display = "block";
+
+			  $("a").on("mouseover", function(event) {
+			    sound_hover.play();
+			  });
+			})
+
+			sound_bg.addEventListener("ended", function() {
+		    this.currentTime = 0;
+		    this.play();
+			}, false);
+
+			function CloseSplash() {
+				var splash = document.getElementById("splash");
+
+				splash.style.display = "none";
+				content.style.display = "block";
+
+				sound_bg.volume = 0.25;
+				sound_bg.play();
+			}
 
 			function ClosePopups() {
 				var pop = document.getElementById(active);
@@ -102,6 +113,9 @@
 				relations.style.display = "block";
 				popups.style.display = "none";
 				pop.style.display = "none";
+
+				sound_click.play();
+				sound_page.play();
 			}
 
 			function ShowPopup(popup) {
@@ -112,16 +126,25 @@
 				pop.style.display = "block";
 
 				active = popup;
+
+				sound_click.play();
+				sound_page.play();
 			}
 
 			function ShowRelations() {
 				relations.style.display = "block";
 				content.style.display = "none";
+
+				sound_click.play();
+				sound_page.play();
 			}
 
 			function ShowContent() {
 				relations.style.display = "none";
 				content.style.display = "block";
+
+				sound_click.play();
+				sound_page.play();
 			}
 		</script>
 	</body>
