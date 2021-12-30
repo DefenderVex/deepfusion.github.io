@@ -69,6 +69,16 @@ body {
 	margin-bottom: 32px;
 }
 
+hr.polaroids {
+	background: url("");
+  display: block;
+  height: 0;
+  border: 0;
+  position: relative;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
 .profile {
 	height: 256px;
 	display: flex;
