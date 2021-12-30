@@ -87,44 +87,47 @@ body {
 	margin-right: 12px;
 }
 
-.polaroids .image h2 {
+h2 {
 	font-weight: normal;
 	font-size: 32px;
 	text-align: center;
 	margin: 0;
 	padding: 0;
+}
+
+.polaroids .image h2 {
 	margin-top: 6px;
 }
 
-.polaroids .image h2:hover {
+h2:hover {
 	font-weight: bold;
 }
 
-.polaroids .image h2.feared {
+h2.feared {
 	color: #c0392b;
 }
 
-.polaroids .image h2.hated {
+h2.hated {
 	color: #d35400;
 }
 
-.polaroids .image h2.unliked {
+h2.unliked {
 	color: #f39c12;
 }
 
-.polaroids .image h2.neutral {
+h2.neutral {
 	color: #95a5a6;
 }
 
-.polaroids .image h2.liked {
+h2.liked {
 	color: #1abc9c;
 }
 
-.polaroids .image h2.admired {
+h2.admired {
 	color: #3498db;
 }
 
-.polaroids .image h2.idolized {
+h2.idolized {
 	color: #9b59b6;
 }
 
@@ -135,10 +138,22 @@ body {
 .text {
 	width: 768px;
 	flex: 1;
+	overflow: hidden;
+}
+
+.text p {
+	margin: 0;
+	margin-right: 24px;
+	font-size: 24px;
 }
 
 .profile img {
 	height: 256px;
+}
+
+.profile h2 {
+	text-align: center;
+	font-size: 42px;
 }
 
 .profile h1 {

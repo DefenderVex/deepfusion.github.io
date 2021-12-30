@@ -22,6 +22,26 @@
 			</div>
 		</div>
 
+		<div class="content" id="popups">
+			<div class="center">
+				<div class="container">
+					<hr>
+					<div id="test" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2 class="hated">Hated</h2>
+								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+							</div>
+							<div class="picture"><img src="images/placeholder.png" style="transform: rotate(0deg);"></div>
+						</div>
+					</div>
+					<hr>
+					<a onclick="ClosePopups()">"THOSE WHO I KNOW"</a>
+					<hr>
+				</div>
+			</div>
+		</div>
+
 		<div class="content" id="relations">
 			<div class="center">
 				<div class="container">
@@ -31,7 +51,7 @@
 					<div class="polaroids">
 						<div class="image">
 							<img src="images/placeholder.png" style="transform: rotate(0deg);">
-							<h2 class="feared">Feared</h2>
+							<h2 class="feared" onclick="ShowPopup('test')">Feared</h2>
 						</div>
 						<div class="image">
 							<img src="images/placeholder.png" style="transform: rotate(-2deg);">
@@ -71,6 +91,27 @@
 		<script>
 			var relations = document.getElementById("relations");
 			var content = document.getElementById("content");
+			var popups = document.getElementById("popups");
+
+			var active = "";
+
+			function ClosePopups() {
+				var pop = document.getElementById(active);
+
+				relations.style.display = "block";
+				popups.style.display = "none";
+				pop.style.display = "none";
+			}
+
+			function ShowPopup(popup) {
+				var pop = document.getElementById(popup);
+
+				relations.style.display = "none";
+				popups.style.display = "block";
+				pop.style.display = "block";
+
+				active = popup;
+			}
 
 			function ShowRelations() {
 				relations.style.display = "block";
