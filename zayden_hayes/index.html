@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>Zayden Hayes</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div class="content" id="content" style="display: block;">
+			<div class="center">
+				<div class="container">
+					<hr>
+					<div class="profile">
+						<div class="picture"><img src="images/profiles/zayden.png"></div>
+						<div class="text"><h1>Zayden Hayes</h1></div>
+					</div>
+					<hr>
+					<img src="images/info.png">
+					<hr>
+					<a onclick="ShowRelations()">"THOSE WHO I KNOW"</a>
+					<hr>
+				</div>
+			</div>
+		</div>
+
+		<div class="content" id="relations">
+			<div class="center">
+				<div class="container">
+					<hr>
+					<img src="images/grade.png">
+					<hr>
+					<div class="polaroids">
+						<div class="image">
+							<img src="images/placeholder.png" style="transform: rotate(0deg);">
+							<h2 class="feared">Feared</h2>
+						</div>
+						<div class="image">
+							<img src="images/placeholder.png" style="transform: rotate(-2deg);">
+							<h2 class="hated">Hated</h2>
+						</div>
+						<div class="image">
+							<img src="images/placeholder.png" style="transform: rotate(1deg);">
+							<h2 class="unliked">Unliked</h2>
+						</div>
+						<div class="image">
+							<img src="images/placeholder.png" style="transform: rotate(2deg);">
+							<h2 class="neutral">Neutral</h2>
+						</div>
+					</div>
+
+					<div class="polaroids">
+						<div class="image">
+							<img src="images/placeholder.png" style="transform: rotate(-1deg);">
+							<h2 class="liked">Liked</h2>
+						</div>
+						<div class="image">
+							<img src="images/placeholder.png" style="transform: rotate(0deg);">
+							<h2 class="admired">Admired</h2>
+						</div>
+						<div class="image">
+							<img src="images/placeholder.png" style="transform: rotate(3deg);">
+							<h2 class="idolized">Idolized</h2>
+						</div>
+					</div>
+					<hr>
+					<a onclick="ShowContent()">"THAT WHAT I AM"</a>
+					<hr>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			var relations = document.getElementById("relations");
+			var content = document.getElementById("content");
+
+			function ShowRelations() {
+				relations.style.display = "block";
+				content.style.display = "none";
+			}
+
+			function ShowContent() {
+				relations.style.display = "none";
+				content.style.display = "block";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Traveling Typewriter";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/traveling_typewriter.woff") format("woff");
+}
+
+body {
+	background-color: black;
+	color: white;
+	font-family: "Traveling Typewriter";
+	overflow: hidden;
+}
+
+.container {
+	margin: auto;
+	position: relative;
+	width: 1024px;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.content {
+	display: none;
+	width: 100%;
+	height: 100%;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.container a {
+	text-align: center;
+	font-size: 48pt;
+	color: #e08026;
+  margin-left: auto;
+  margin-right: auto;
+	display: block;
+}
+
+.container a:hover {
+	font-weight: bold;
+}
+
+.container hr {
+	background: url("images/line.png") no-repeat top center;
+  background-size: contain;
+  display: block;
+  height: 13px;
+  border: 0;
+  position: relative;
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.profile {
+	height: 256px;
+	display: flex;
+}
+
+.polaroids {
+	display: flex;
+}
+
+.polaroids img {
+	height: 232px;
+}
+
+.polaroids .image {
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+.polaroids .image h2 {
+	font-weight: normal;
+	font-size: 24pt;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	margin-top: 6px;
+}
+
+.polaroids .image h2.feared {
+	color: #c0392b;
+}
+
+.polaroids .image h2.hated {
+	color: #d35400;
+}
+
+.polaroids .image h2.unliked {
+	color: #f39c12;
+}
+
+.polaroids .image h2.neutral {
+	color: #95a5a6;
+}
+
+.polaroids .image h2.liked {
+	color: #1abc9c;
+}
+
+.polaroids .image h2.admired {
+	color: #3498db;
+}
+
+.polaroids .image h2.idolized {
+	color: #9b59b6;
+}
+
+.picture {
+	width: 256px;
+}
+
+.text {
+	width: 768px;
+	flex: 1;
+}
+
+.profile img {
+	height: 256px;
+}
+
+.profile h1 {
+	font-size: 64pt;
+	text-align: right;
+	line-height: 256px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
