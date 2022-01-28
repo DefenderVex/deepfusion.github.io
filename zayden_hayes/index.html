@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 	<head>
 		<title>Zayden Hayes</title>
 		<link rel="stylesheet" href="style.css">
@@ -23,7 +23,7 @@
 						<div class="text"><h1>Zayden Hayes</h1></div>
 					</div>
 					<hr>
-					<img src="images/info.png">
+					<img src="images/info.png" style="transform: translateZ(24px);">
 					<hr>
 					<a onclick="ShowRelations()">"THOSE WHO I KNOW"</a>
 					<hr>
@@ -35,7 +35,7 @@
 			<div class="center">
 				<div class="container">
 					<hr>
-					<div id="profile_sia" style="display: none;">
+					<div class="card" id="profile_sia" style="display: none;">
 						<div class="profile">
 							<div class="text">
 								<h2 class="liked">Sia Baquera</h2>
@@ -55,21 +55,51 @@
 			<div class="center">
 				<div class="container">
 					<hr>
-					<img src="images/grade.png">
+					<img src="images/grade.png" style="transform: translateZ(24px);">
 					<hr>
 					<div class="polaroids">
 						<div class="image">
 							<img src="images/profiles/sia.png" style="transform: rotate(0deg);">
-							<h2 class="liked" onclick="ShowPopup('profile_sia')">Sia Baquera</h2>
+							<a onclick="ShowPopup('profile_sia')"><h2 class="liked">Sia Baquera</h2></a>
 						</div>
 					</div>
 					<!--<hr class="polaroids">-->
 					<hr>
-					<a onclick="ShowContent()">"THAT WHAT I AM"</a>
+					<a onclick="ShowContent()">"THAT WHICH I AM"</a>
 					<hr>
 				</div>
 			</div>
 		</div>
+
+		<script>
+			!(function ($doc, $win) {
+				var screenWidth = $win.screen.width / 2,
+					screenHeight = $win.screen.height / 2,
+					$elems = $doc.getElementsByClassName("container"),
+					validPropertyPrefix = '',
+					otherProperty = 'perspective(1000px)',
+					elemStyle = $elems[0].style;
+
+				if(typeof elemStyle.webkitTransform == 'string') {
+					validPropertyPrefix = 'webkitTransform';
+				} else if (typeof elemStyle.MozTransform == 'string') {
+					validPropertyPrefix = 'MozTransform';
+				}
+
+				$doc.addEventListener('mousemove', function (e) {
+					var centroX = e.clientX - screenWidth,
+						centroY = screenHeight - (e.clientY + 13),
+						degX = centroX * 0.04 / 8,
+						degY = 0, //centroY * 0.04 / 8,
+						$elem
+
+					for (var i = 0; i < $elems.length; i++) {
+			   			$elem = $elems[i];
+						$elem.style[validPropertyPrefix] = otherProperty + 'rotateY('+ degX +'deg)  rotateX('+ degY +'deg)';
+					};
+				});
+			})(document, window);
+		</script>
 
 		<script>
 			var sound_page = new Audio("sounds/window_open.wav");
