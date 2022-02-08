@@ -153,6 +153,51 @@ h2.idolized {
 	color: #9b59b6;
 }
 
+h3 {
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+}
+
+.polaroids .image h3 {
+	margin-top: 6px;
+}
+
+.polaroids .image h3:hover {
+	font-weight: bold;
+}
+
+h3.feared {
+	color: #c0392b;
+}
+
+h3.hated {
+	color: #d35400;
+}
+
+h3.unliked {
+	color: #f39c12;
+}
+
+h3.neutral {
+	color: #95a5a6;
+}
+
+h3.liked {
+	color: #1abc9c;
+}
+
+h3.admired {
+	color: #3498db;
+}
+
+h3.idolized {
+	color: #9b59b6;
+}
+
 .picture {
 	width: 256px;
 }
