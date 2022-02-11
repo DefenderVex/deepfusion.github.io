@@ -96,6 +96,10 @@ hr.polaroids {
 }
 
 .polaroids {
+	display: none;
+}
+
+.carousel {
 	display: flex;
 	transform: translateZ(24px);
 }
@@ -125,31 +129,37 @@ h2 {
 	font-weight: bold;
 }
 
-h2.feared {
+i {
+	margin: 0;
+	disilay: inline;
+	font-style: normal;
+}
+
+i.feared {
 	color: #c0392b;
 }
 
-h2.hated {
+i.hated {
 	color: #d35400;
 }
 
-h2.unliked {
+i.unliked {
 	color: #f39c12;
 }
 
-h2.neutral {
+i.neutral {
 	color: #95a5a6;
 }
 
-h2.liked {
+i.liked {
 	color: #1abc9c;
 }
 
-h2.admired {
+i.admired {
 	color: #3498db;
 }
 
-h2.idolized {
+i.idolized {
 	color: #9b59b6;
 }
 
@@ -170,32 +180,21 @@ h3 {
 	font-weight: bold;
 }
 
-h3.feared {
-	color: #c0392b;
+h4 {
+	font-weight: normal;
+	font-size: 20px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
 }
 
-h3.hated {
-	color: #d35400;
+.polaroids .image h4 {
+	margin-top: 6px;
 }
 
-h3.unliked {
-	color: #f39c12;
-}
-
-h3.neutral {
-	color: #95a5a6;
-}
-
-h3.liked {
-	color: #1abc9c;
-}
-
-h3.admired {
-	color: #3498db;
-}
-
-h3.idolized {
-	color: #9b59b6;
+.polaroids .image h4:hover {
+	font-weight: bold;
 }
 
 .picture {
@@ -230,4 +229,18 @@ h3.idolized {
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  margin: 0 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.active, .dot:hover {
+  background-color: #e08026;
 }

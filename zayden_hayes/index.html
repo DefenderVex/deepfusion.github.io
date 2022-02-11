@@ -38,7 +38,7 @@
 					<div class="card" id="profile_sia" style="display: none;">
 						<div class="profile">
 							<div class="text">
-								<h2 class="liked">Sia Baquera</h2>
+								<h2><i class="liked">Sia</i> <i class="admired">Baquera</i></h2>
 								<p>"I didn't actually ever plan to run into you again, I got lucky and got out before AC pretty much exploded like a scene out of Death Stranding and I wasn't exactly planning on coming back. Look it's not like it isn't nice to know you're not dead but I left for a reason."</p>
 							</div>
 							<div class="picture"><img src="images/profiles/sia.png" style="transform: rotate(0deg);"></div>
@@ -47,7 +47,7 @@
 					<div class="card" id="profile_vasily" style="display: none;">
 						<div class="profile">
 							<div class="text">
-								<h2 class="neutral">Vasily Ulyanova</h2>
+								<h2><i class="neutral">Vasily Ulyanova</i></h2>
 								<p>"Vas you are -- dunno, green? Totally planning something but I'm not sure you actually know what you're doing. Just know you better be careful what you decide to dig into or get involved with."</p>
 							</div>
 							<div class="picture"><img src="images/profiles/vasily.png" style="transform: rotate(2deg);"></div>
@@ -56,10 +56,37 @@
 					<div class="card" id="profile_teagan" style="display: none;">
 						<div class="profile">
 							<div class="text">
-								<h2 class="admired">Teagan Ridge</h2>
+								<h2><i class="admired">Teagan</i> <i class="idolized">Ridge</i></h2>
 								<p>"I know we haven't seen each other much since I enlisted but I can say the time I spent with you when I am around has been some of the best highlights of my life. If I have any say in it, you better be sticking around for the long haul hotshot."</p>
 							</div>
 							<div class="picture"><img src="images/profiles/teagan.png" style="transform: rotate(-1deg);"></div>
+						</div>
+					</div>
+					<div class="card" id="profile_bastianna" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="neutral">Bastianna Anderssen</i></h2>
+								<p>"You're the chief doctor at Southside, but there's something about you. You're abrasive but I don't think we will end up interacting with each other all that much to be honest."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/bastianna.png" style="transform: rotate(1deg);"></div>
+						</div>
+					</div>
+					<div class="card" id="profile_katya" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="liked">Katya Petrov</i></h2>
+								<p>"You know when I first met you I was never really that sure. But I grew to like you, and I'll be honest. Your accent is fun to listen to a lot of the time."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/katya.png" style="transform: rotate(2.5deg);"></div>
+						</div>
+					</div>
+					<div class="card" id="profile_ashkan" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="neutral">Ashkan</i> <i class="liked">De'witt</i></h2>
+								<p>"Things have changed a lot haven't they? I didn't exactly end up in the profession I thought I would, And you're the last person I ever expected to be working with."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/ashkan.png" style="transform: rotate(0deg);"></div>
 						</div>
 					</div>
 					<hr>
@@ -75,27 +102,84 @@
 					<hr>
 					<img src="images/grade.png" style="transform: translateZ(24px);">
 					<hr>
-					<div class="polaroids">
-						<div class="image">
-							<img src="images/profiles/sia.png" style="transform: rotate(0deg);">
-							<a onclick="ShowPopup('profile_sia')"><h2 class="liked">Sia Baquera</h2></a>
+					<div class="carousel">
+						<div class="polaroids">
+							<div class="image">
+								<img src="images/profiles/sia.png" style="transform: rotate(0deg);">
+								<a onclick="ShowPopup('profile_sia')"><h2><i class="liked">Sia</i> <i class="admired">Baquera</i></h2></a>
+							</div>
+							<div class="image">
+								<img src="images/profiles/vasily.png" style="transform: rotate(2deg);">
+								<a onclick="ShowPopup('profile_vasily')"><h3><i class="neutral">Vasily Ulyanova</i></h3></a>
+							</div>
+							<div class="image">
+								<img src="images/profiles/teagan.png" style="transform: rotate(-1deg);">
+								<a onclick="ShowPopup('profile_teagan')"><h2><i class="admired">Teagan</i> <i class="idolized">Ridge</i></h2></a>
+							</div>
+							<div class="image">
+								<img src="images/profiles/bastianna.png" style="transform: rotate(1deg);">
+								<a onclick="ShowPopup('profile_bastianna')"><h4><i class="neutral">Bastianna Anderssen</i></h4></a>
+							</div>
 						</div>
-						<div class="image">
-							<img src="images/profiles/vasily.png" style="transform: rotate(2deg);">
-							<a onclick="ShowPopup('profile_vasily')"><h3 class="neutral">Vasily Ulyanova</h2></a>
-						</div>
-						<div class="image">
-							<img src="images/profiles/teagan.png" style="transform: rotate(-1deg);">
-							<a onclick="ShowPopup('profile_teagan')"><h2 class="admired">Teagan Ridge</h2></a>
+						<div class="polaroids">
+							<div class="image">
+								<img src="images/profiles/katya.png" style="transform: rotate(2.5deg);">
+								<a onclick="ShowPopup('profile_katya')"><h2><i class="liked">Katya Petrov</i></h2></a>
+							</div>
+							<div class="image">
+								<img src="images/profiles/ashkan.png" style="transform: rotate(0deg);">
+								<a onclick="ShowPopup('profile_ashkan')"><h2><i class="neutral">Ashkan</i> <i class="liked">De'witt</i></h2></a>
+							</div>
 						</div>
 					</div>
-					<!--<hr class="polaroids">-->
+					<hr>
+					<div style="text-align: center; transform: translateZ(24px);">
+					  <span class="dot" onclick="currentPolaroid(1)"></span>
+					  <span class="dot" onclick="currentPolaroid(2)"></span>
+					</div>
 					<hr>
 					<a onclick="ShowContent()">"THAT WHICH I AM"</a>
 					<hr>
 				</div>
 			</div>
 		</div>
+
+		<script>
+			var sound_page = new Audio("sounds/window_open.wav");
+			var sound_click = new Audio("sounds/button_click.wav");
+
+			var polaroidsIndex = 1;
+			showPolaroids(polaroidsIndex);
+
+			// Next/previous controls
+			function plusPolaroids(n) {
+			  showPolaroids(polaroidsIndex += n);
+			}
+
+			// Thumbnail image controls
+			function currentPolaroid(n) {
+			  showPolaroids(polaroidsIndex = n);
+
+				sound_click.play();
+				sound_page.play();
+			}
+
+			function showPolaroids(n) {
+			  var i;
+			  var Polaroids = document.getElementsByClassName("polaroids");
+			  var dots = document.getElementsByClassName("dot");
+			  if (n > Polaroids.length) {polaroidsIndex = 1}
+			  if (n < 1) {polaroidsIndex = Polaroids.length}
+			  for (i = 0; i < Polaroids.length; i++) {
+			      Polaroids[i].style.display = "none";
+			  }
+			  for (i = 0; i < dots.length; i++) {
+			      dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  Polaroids[polaroidsIndex-1].style.display = "flex";
+			  dots[polaroidsIndex-1].className += " active";
+			}
+		</script>
 
 		<script>
 			var baseSize = {
@@ -164,6 +248,10 @@
 				splash.style.display = "block";
 
 			  $("a").on("mouseover", function(event) {
+			    sound_hover.play();
+			  });
+
+			  $("span").on("mouseover", function(event) {
 			    sound_hover.play();
 			  });
 			})
