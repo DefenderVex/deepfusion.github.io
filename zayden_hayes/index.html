@@ -19,7 +19,7 @@
 				<div class="container">
 					<hr>
 					<div class="profile">
-						<div class="picture"><img src="images/profiles/zayden.png"></div>
+						<div class="picture"><img src="images/profiles/zayden.png" onclick="vargr()"></div>
 						<div class="text"><h1>Zayden Hayes</h1></div>
 					</div>
 					<hr>
@@ -134,12 +134,26 @@
 					</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
-					  <span class="dot" onclick="currentPolaroid(1)"></span>
-					  <span class="dot" onclick="currentPolaroid(2)"></span>
+					  <span class="dot" onclick="currentPolaroid(1)" style="transform: rotate(0deg);"></span>
+					  <span class="dot" onclick="currentPolaroid(2)" style="transform: rotate(15deg);"></span>
 					</div>
 					<hr>
 					<a onclick="ShowContent()">"THAT WHICH I AM"</a>
 					<hr>
+				</div>
+			</div>
+		</div>
+
+		<div class="content" id="vargr">
+			<div class="center">
+				<div class="container">
+					<img src="images/vargr.png" style="width: 384px; display: block; margin-left: auto; margin-right: auto; transform: translateZ(24px);">
+					<div class="profile">
+						<div class="text"><h1 style="text-align: center;"><i class="feared">"Vargr"</i></h1></div>
+					</div>
+					<hr class="polaroids">
+					<h3 style="transform: translateZ(24px);">the dark inside is where the monsters lurk</h3>
+					<h3 style="transform: translateZ(24px);">all it takes is someone turning out the lights</h3>
 				</div>
 			</div>
 		</div>
@@ -242,6 +256,20 @@
 			var popups = document.getElementById("popups");
 
 			var active = "";
+
+			var count = 0;
+
+			function vargr() {
+					count++;
+
+					if (count == 5) {
+						content.style.display = "none";
+						sound_bg.pause();
+
+						var vargr = document.getElementById("vargr");
+						vargr.style.display = "block";
+					}
+			}
 
 			$(document).ready(function() {
 				var splash = document.getElementById("splash");

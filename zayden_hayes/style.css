@@ -233,14 +233,13 @@ h4 {
 
 .dot {
   cursor: pointer;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   margin: 0 24px;
-  background-color: #fff;
-  border-radius: 50%;
+	background-image: url("images/dot_white.svg");
   display: inline-block;
 }
 
 .active, .dot:hover {
-  background-color: #e08026;
+  background-image: url("images/dot_orange.svg");
 }
