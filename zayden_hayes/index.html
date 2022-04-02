@@ -3,6 +3,7 @@
 		<title>Zayden Hayes</title>
 		<link rel="stylesheet" href="style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="icon" type="image/x-icon" href="images/dot_orange.svg">
 	</head>
 
 	<body>
@@ -42,8 +43,9 @@
 					<div class="card" id="profile_sia" style="display: none;">
 						<div class="profile">
 							<div class="text">
-								<h2><i class="liked">Sia</i> <i class="admired">Baquera</i></h2>
+								<h2><i class="unliked">Sia</i> <i class="admired">Baquera</i></h2>
 								<p>"I didn't actually ever plan to run into you again, I got lucky and got out before AC pretty much exploded like a scene out of Death Stranding and I wasn't exactly planning on coming back. Look it's not like it isn't nice to know you're not dead but I left for a reason."</p>
+								<br><p><i class="primary">[04/02/2022]</i> "This is fucked up, after everything you wouldn't even consider the idea I was telling the truth. So you just <i class="unliked">strangle me</i> and call me a lier. I can't deal with this shit. I can't deal with you."</p>
 							</div>
 							<div class="picture"><img src="images/profiles/sia.png" style="transform: rotate(0deg);"></div>
 						</div>
@@ -114,7 +116,7 @@
 						<div class="polaroids">
 							<div class="image">
 								<img src="images/profiles/sia.png" style="transform: rotate(0deg);">
-								<a onclick="ShowPopup('profile_sia')"><h4><i class="liked">Sia</i> <i class="admired">Baquera</i></h4></a>
+								<a onclick="ShowPopup('profile_sia')"><h4><i class="unliked">Sia</i> <i class="admired">Baquera</i></h4></a>
 							</div>
 							<div class="image">
 								<img src="images/profiles/vasily.png" style="transform: rotate(2deg);">
@@ -164,8 +166,8 @@
 						<div class="text"><h1 style="text-align: center;"><i class="feared">"Vargr"</i></h1></div>
 					</div>
 					<hr class="polaroids">
-					<h3 style="transform: translateZ(24px);">the dark inside is where the monsters lurk</h3>
-					<h3 style="transform: translateZ(24px);">all it takes is someone turning out the lights</h3>
+					<!--<h3 style="transform: translateZ(24px);">the dark inside is where the monsters lurk</h3>
+					<h3 style="transform: translateZ(24px);">all it takes is someone turning out the lights</h3>-->
 				</div>
 			</div>
 		</div>
@@ -261,7 +263,9 @@
 			var sound_page = new Audio("sounds/window_open.wav");
 			var sound_hover = new Audio("sounds/button_hover.wav");
 			var sound_click = new Audio("sounds/button_click.wav");
-			var sound_bg = new Audio("sounds/background.mp3");
+
+			var sound_bg = new Audio("sounds/playlist/1.mp3");
+			var bg_loop = new Audio("sounds/playlist/1_loop.mp3");
 
 			var relations = document.getElementById("relations");
 			var content = document.getElementById("content");
@@ -292,11 +296,21 @@
 			  });
 
 			  $("span").on("mouseover", function(event) {
+					var classList = event.target.classList
+					if (classList.contains("icon_inactive") || classList.contains("active")) {
+						return
+					}
+
 			    sound_hover.play();
 			  });
 			})
 
 			sound_bg.addEventListener("ended", function() {
+				bg_loop.volume = 0.25;
+				bg_loop.play();
+			}, false);
+
+			bg_loop.addEventListener("ended", function() {
 		    this.currentTime = 0;
 		    this.play();
 			}, false);

@@ -51,6 +51,7 @@ body {
 }
 
 .container a {
+	cursor: pointer;
 	text-align: center;
 	font-size: 48px;
 	color: #e08026;
@@ -135,6 +136,10 @@ i {
 	font-style: normal;
 }
 
+i.primary {
+	color: #e08026;
+}
+
 i.feared {
 	color: #c0392b;
 }
@@ -204,12 +209,12 @@ h4 {
 .text {
 	width: 768px;
 	flex: 1;
-	overflow: hidden;
+	margin-right: 24px;
+	overflow: auto;
 }
 
 .text p {
 	margin: 0;
-	margin-right: 24px;
 	font-size: 24px;
 }
 
@@ -272,4 +277,25 @@ h4 {
 	background-repeat: no-repeat;
 	background-position: center center;
 	filter: brightness(50%) saturate(50%);
+}
+
+/* width */
+::-webkit-scrollbar {
+	margin-left: 12px;
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1f1f1f;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2b2b2b;
 }
