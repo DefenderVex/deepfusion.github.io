@@ -25,7 +25,11 @@
 					<hr>
 					<img src="images/info.png" style="transform: translateZ(24px);">
 					<hr>
-					<a onclick="ShowRelations()">"THOSE WHO I KNOW"</a>
+					<div style="text-align: center; transform: translateZ(24px);">
+					<span class="icon active" onclick="ShowContent()" style="background-image: url('images/icons/profile.svg');"></span>
+					<span class="icon" onclick="ShowRelations()" style="background-image: url('images/icons/contacts.svg');"></span>
+					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/journal.svg');"></span>
+					</div>
 					<hr>
 				</div>
 			</div>
@@ -90,7 +94,11 @@
 						</div>
 					</div>
 					<hr>
-					<a onclick="ClosePopups()">"THOSE WHO I KNOW"</a>
+					<div style="text-align: center; transform: translateZ(24px);">
+					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/profile.svg');"></span>
+					<span class="icon" onclick="ClosePopups()" style="background-image: url('images/icons/contacts.svg');"></span>
+					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/journal.svg');"></span>
+					</div>
 					<hr>
 				</div>
 			</div>
@@ -106,15 +114,15 @@
 						<div class="polaroids">
 							<div class="image">
 								<img src="images/profiles/sia.png" style="transform: rotate(0deg);">
-								<a onclick="ShowPopup('profile_sia')"><h2><i class="liked">Sia</i> <i class="admired">Baquera</i></h2></a>
+								<a onclick="ShowPopup('profile_sia')"><h4><i class="liked">Sia</i> <i class="admired">Baquera</i></h4></a>
 							</div>
 							<div class="image">
 								<img src="images/profiles/vasily.png" style="transform: rotate(2deg);">
-								<a onclick="ShowPopup('profile_vasily')"><h3><i class="neutral">Vasily Ulyanova</i></h3></a>
+								<a onclick="ShowPopup('profile_vasily')"><h4><i class="neutral">Vasily Ulyanova</i></h4></a>
 							</div>
 							<div class="image">
 								<img src="images/profiles/teagan.png" style="transform: rotate(-1deg);">
-								<a onclick="ShowPopup('profile_teagan')"><h2><i class="admired">Teagan</i> <i class="idolized">Ridge</i></h2></a>
+								<a onclick="ShowPopup('profile_teagan')"><h4><i class="admired">Teagan</i> <i class="idolized">Ridge</i></h4></a>
 							</div>
 							<div class="image">
 								<img src="images/profiles/bastianna.png" style="transform: rotate(1deg);">
@@ -124,11 +132,11 @@
 						<div class="polaroids">
 							<div class="image">
 								<img src="images/profiles/katya.png" style="transform: rotate(2.5deg);">
-								<a onclick="ShowPopup('profile_katya')"><h2><i class="liked">Katya Petrov</i></h2></a>
+								<a onclick="ShowPopup('profile_katya')"><h4><i class="liked">Katya Petrov</i></h4></a>
 							</div>
 							<div class="image">
 								<img src="images/profiles/ashkan.png" style="transform: rotate(0deg);">
-								<a onclick="ShowPopup('profile_ashkan')"><h2><i class="neutral">Ashkan</i> <i class="liked">De'witt</i></h2></a>
+								<a onclick="ShowPopup('profile_ashkan')"><h4><i class="neutral">Ashkan</i> <i class="liked">De'witt</i></h4></a>
 							</div>
 						</div>
 					</div>
@@ -138,7 +146,11 @@
 					  <span class="dot" onclick="currentPolaroid(2)" style="transform: rotate(15deg);"></span>
 					</div>
 					<hr>
-					<a onclick="ShowContent()">"THAT WHICH I AM"</a>
+					<div style="text-align: center; transform: translateZ(24px);">
+					<span class="icon" onclick="ShowContent()" style="background-image: url('images/icons/profile.svg');"></span>
+					<span class="icon active" onclick="" style="background-image: url('images/icons/contacts.svg');"></span>
+					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/journal.svg');"></span>
+					</div>
 					<hr>
 				</div>
 			</div>
