@@ -44,8 +44,8 @@
 						<div class="profile">
 							<div class="text">
 								<h2><i class="unliked">Sia</i> <i class="admired">Baquera</i></h2>
-								<p>"I didn't actually ever plan to run into you again, I got lucky and got out before AC pretty much exploded like a scene out of Death Stranding and I wasn't exactly planning on coming back. Look it's not like it isn't nice to know you're not dead but I left for a reason."</p>
-								<br><p><i class="primary">[04/02/2022]</i> "This is fucked up, after everything you wouldn't even consider the idea I was telling the truth. So you just <i class="unliked">strangle me</i> and call me a lier. I can't deal with this shit. I can't deal with you."</p>
+								<p><i class="primary">[04/02/2022]</i> "This is fucked up, after everything you wouldn't even consider the idea I was telling the truth. So you just <i class="unliked">strangle me</i> and call me a lier. I can't deal with this shit. I can't deal with you."</p>
+								<br><p>"I didn't actually ever plan to run into you again, I got lucky and got out before AC pretty much exploded like a scene out of Death Stranding and I wasn't exactly planning on coming back. Look it's not like it isn't nice to know you're not dead but I left for a reason."</p>
 							</div>
 							<div class="picture"><img src="images/profiles/sia.png" style="transform: rotate(0deg);"></div>
 						</div>
@@ -95,6 +95,33 @@
 							<div class="picture"><img src="images/profiles/ashkan.png" style="transform: rotate(0deg);"></div>
 						</div>
 					</div>
+					<div class="card" id="profile_marcus" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="admired">Marcus Silverstein</i></h2>
+								<p>"Honestly I don't think there is anyone else I trust with secrets more than Marcus. He doesn't know everything about me but he knows things other people don't. With everything going on I hope he can still see me."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/marcus.png" style="transform: rotate(3deg);"></div>
+						</div>
+					</div>
+					<div class="card" id="profile_caleb" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="idolized">Caleb Thomas</i></h2>
+								<p>"You raised me for what, Five, six years of my life? Taught me how to find my away around the Shadow Trades. If it wasn't for the Veil I probably would still be with the Consortium."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/placeholder.png" style="transform: rotate(-2deg);"></div>
+						</div>
+					</div>
+					<div class="card" id="profile_alex" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="unliked">Alex</i> <i class="admired">Howard</i></h2>
+								<p>"Saw you pretty much as my brother. Until recently anyway, I just can't deal with this crap right now. So just, fuck off."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/alex.png" style="transform: rotate(-3deg);"></div>
+						</div>
+					</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
 					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/profile.svg');"></span>
@@ -140,12 +167,27 @@
 								<img src="images/profiles/ashkan.png" style="transform: rotate(0deg);">
 								<a onclick="ShowPopup('profile_ashkan')"><h4><i class="neutral">Ashkan</i> <i class="liked">De'witt</i></h4></a>
 							</div>
+							<div class="image">
+								<img src="images/profiles/marcus.png" style="transform: rotate(3deg);">
+								<a onclick="ShowPopup('profile_marcus')"><h4><i class="admired">Marcus Silverstein</i></h4></a>
+							</div>
+							<div class="image">
+								<img src="images/profiles/placeholder.png" style="transform: rotate(-2deg);">
+								<a onclick="ShowPopup('profile_caleb')"><h4><i class="idolized">Caleb Thomas</i></h4></a>
+							</div>
+						</div>
+						<div class="polaroids">
+							<div class="image">
+								<img src="images/profiles/alex.png" style="transform: rotate(-3deg);">
+								<a onclick="ShowPopup('profile_alex')"><h4><i class="unliked">Alex</i> <i class="admired">Howard</i></h4></a>
+							</div>
 						</div>
 					</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
 					  <span class="dot" onclick="currentPolaroid(1)" style="transform: rotate(0deg);"></span>
 					  <span class="dot" onclick="currentPolaroid(2)" style="transform: rotate(15deg);"></span>
+						<span class="dot" onclick="currentPolaroid(3)" style="transform: rotate(-30deg);"></span>
 					</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
@@ -276,6 +318,8 @@
 			var count = 0;
 
 			function vargr() {
+					return
+
 					count++;
 
 					if (count == 5) {

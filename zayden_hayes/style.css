@@ -122,6 +122,14 @@ h2 {
 	padding: 0;
 }
 
+.filter-dead {
+	filter: blur(2px) saturate(200%) sepia(75%);
+}
+
+.filter-sepia {
+	filter: saturate(200%) sepia(75%);
+}
+
 .polaroids .image h2 {
 	margin-top: 6px;
 }
