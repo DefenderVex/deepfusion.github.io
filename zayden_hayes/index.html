@@ -29,7 +29,7 @@
 					<div style="text-align: center; transform: translateZ(24px);">
 					<span class="icon active" onclick="ShowContent()" style="background-image: url('images/icons/profile.svg');"></span>
 					<span class="icon" onclick="ShowRelations()" style="background-image: url('images/icons/contacts.svg');"></span>
-					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/journal.svg');"></span>
+					<span class="icon" onclick="ShowJournal()" style="background-image: url('images/icons/journal.svg');"></span>
 					</div>
 					<hr>
 				</div>
@@ -44,7 +44,7 @@
 						<div class="profile">
 							<div class="text">
 								<h2><i class="unliked">Sia</i> <i class="admired">Baquera</i></h2>
-								<p><i class="primary">[04/02/2022]</i> "This is fucked up, after everything you wouldn't even consider the idea I was telling the truth. So you just <i class="unliked">strangle me</i> and call me a lier. I can't deal with this shit. I can't deal with you."</p>
+								<p><i class="primary">[03/04/2022]</i> "This is fucked up, after everything you wouldn't even consider the idea I was telling the truth. So you just <i class="unliked">strangle me</i> and call me a lier. I can't deal with this shit. I can't deal with you."</p>
 								<br><p>"I didn't actually ever plan to run into you again, I got lucky and got out before AC pretty much exploded like a scene out of Death Stranding and I wasn't exactly planning on coming back. Look it's not like it isn't nice to know you're not dead but I left for a reason."</p>
 							</div>
 							<div class="picture"><img src="images/profiles/sia.png" style="transform: rotate(0deg);"></div>
@@ -72,9 +72,10 @@
 						<div class="profile">
 							<div class="text">
 								<h2><i class="neutral">Bastianna Anderssen</i></h2>
-								<p>"You're the chief doctor at Southside, but there's something about you. You're abrasive but I don't think we will end up interacting with each other all that much to be honest."</p>
+								<p><i class="primary">[03/04/2022]</i> "I have no idea where you vanished too, but I don't think I'll ever see you again. No idea if you're dead or just... Gone."</p>
+								<br><p>"You're the chief doctor at Southside, but there's something about you. You're abrasive but I don't think we will end up interacting with each other all that much to be honest."</p>
 							</div>
-							<div class="picture"><img src="images/profiles/bastianna.png" style="transform: rotate(1deg);"></div>
+							<div class="picture filter-dead"><img src="images/profiles/bastianna.png" style="transform: rotate(1deg);"></div>
 						</div>
 					</div>
 					<div class="card" id="profile_katya" style="display: none;">
@@ -122,6 +123,24 @@
 							<div class="picture"><img src="images/profiles/alex.png" style="transform: rotate(-3deg);"></div>
 						</div>
 					</div>
+					<div class="card" id="profile_thato" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="neutral">Thato Abara</i></h2>
+								<p>"He's been around for a good while, never talked to him much though. But that's changing now so we'll see how it goes."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/placeholder.png" style="transform: rotate(1deg);"></div>
+						</div>
+					</div>
+					<div class="card" id="profile_scott" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="admired">Scott Whitaker</i></h2>
+								<p>"I'm honestly still surprised the level of trouble you went though. Thought I was nothing but a thorne in your side all this time. Guess I was wrong."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/scott.png" style="transform: rotate(-1deg);"></div>
+						</div>
+					</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
 					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/profile.svg');"></span>
@@ -153,9 +172,9 @@
 								<img src="images/profiles/teagan.png" style="transform: rotate(-1deg);">
 								<a onclick="ShowPopup('profile_teagan')"><h4><i class="admired">Teagan</i> <i class="idolized">Ridge</i></h4></a>
 							</div>
-							<div class="image">
+							<div class="image filter-dead">
 								<img src="images/profiles/bastianna.png" style="transform: rotate(1deg);">
-								<a onclick="ShowPopup('profile_bastianna')"><h4><i class="neutral">Bastianna Anderssen</i></h4></a>
+								<a onclick="ShowPopup('profile_bastianna', true)"><h4><i class="neutral">Bastianna Anderssen</i></h4></a>
 							</div>
 						</div>
 						<div class="polaroids">
@@ -181,6 +200,14 @@
 								<img src="images/profiles/alex.png" style="transform: rotate(-3deg);">
 								<a onclick="ShowPopup('profile_alex')"><h4><i class="unliked">Alex</i> <i class="admired">Howard</i></h4></a>
 							</div>
+							<div class="image">
+								<img src="images/profiles/placeholder.png" style="transform: rotate(1deg);">
+								<a onclick="ShowPopup('profile_thato')"><h4><i class="neutral">Thato Abara</i></h4></a>
+							</div>
+							<div class="image">
+								<img src="images/profiles/scott.png" style="transform: rotate(-1deg);">
+								<a onclick="ShowPopup('profile_scott')"><h4><i class="admired">Scott Whitaker</i></h4></a>
+							</div>
 						</div>
 					</div>
 					<hr>
@@ -193,7 +220,25 @@
 					<div style="text-align: center; transform: translateZ(24px);">
 					<span class="icon" onclick="ShowContent()" style="background-image: url('images/icons/profile.svg');"></span>
 					<span class="icon active" onclick="" style="background-image: url('images/icons/contacts.svg');"></span>
-					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/journal.svg');"></span>
+					<span class="icon" onclick="ShowJournal()" style="background-image: url('images/icons/journal.svg');"></span>
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+
+		<div class="content" id="journal">
+			<div class="center">
+				<div class="container">
+					<hr>
+					<div class="journal">
+						<p><i class="primary">[05/04/2022]</i> "Last week has been pretty twisted up. Wasn't sure if things could get any worse after spending three weeks down there just to escape and start kicking the bucket. And now I'm like <b>this.</b> Its messed up what they did but, it feels more twisted I'm glad they couldn't ask me permission to do it. I don't think I could've said yes."<p>
+					</div>
+					<hr>
+					<div style="text-align: center; transform: translateZ(24px);">
+					<span class="icon" onclick="ShowContent()" style="background-image: url('images/icons/profile.svg');"></span>
+					<span class="icon" onclick="ShowRelations()" style="background-image: url('images/icons/contacts.svg');"></span>
+					<span class="icon active" onclick="" style="background-image: url('images/icons/journal.svg');"></span>
 					</div>
 					<hr>
 				</div>
@@ -306,9 +351,12 @@
 			var sound_hover = new Audio("sounds/button_hover.wav");
 			var sound_click = new Audio("sounds/button_click.wav");
 
-			var sound_bg = new Audio("sounds/playlist/1.mp3");
-			var bg_loop = new Audio("sounds/playlist/1_loop.mp3");
+			var sound_bg = new Audio("sounds/playlist/4.mp3");
+			var bg_loop = new Audio("sounds/playlist/4_loop.mp3");
 
+			var volume_max = 0.5;
+
+			var journal = document.getElementById("journal");
 			var relations = document.getElementById("relations");
 			var content = document.getElementById("content");
 			var popups = document.getElementById("popups");
@@ -349,15 +397,50 @@
 			  });
 			})
 
+			var looping = false;
+
 			sound_bg.addEventListener("ended", function() {
-				bg_loop.volume = 0.25;
+				bg_loop.volume = volume_max;
 				bg_loop.play();
 			}, false);
 
 			bg_loop.addEventListener("ended", function() {
+				looping = true;
 		    this.currentTime = 0;
 		    this.play();
 			}, false);
+
+			var curTrack = 4;
+
+			function FlipTrack(track) {
+				if (curTrack == track) {
+					return
+				}
+
+				if (looping) {
+					var cur1 = bg_loop.currentTime
+
+					bg_loop.pause();
+
+					bg_loop.src = "sounds/playlist/" + track + "_loop.mp3"
+					bg_loop.load();
+					bg_loop.currentTime = cur1
+					bg_loop.play();
+				} else {
+					var cur2 = sound_bg.currentTime
+
+					sound_bg.pause();
+
+					sound_bg.src = "sounds/playlist/" + track + ".mp3"
+					bg_loop.src = "sounds/playlist/" + track + "_loop.mp3"
+					sound_bg.load();
+					bg_loop.load();
+					sound_bg.currentTime = cur2
+					sound_bg.play();
+				}
+
+				curTrack = track;
+			}
 
 			function CloseSplash() {
 				var splash = document.getElementById("splash");
@@ -365,7 +448,7 @@
 				splash.style.display = "none";
 				content.style.display = "block";
 
-				sound_bg.volume = 0.25;
+				sound_bg.volume = volume_max;
 				sound_bg.play();
 			}
 
@@ -376,11 +459,13 @@
 				popups.style.display = "none";
 				pop.style.display = "none";
 
+				FlipTrack(4)
+
 				sound_click.play();
 				sound_page.play();
 			}
 
-			function ShowPopup(popup) {
+			function ShowPopup(popup, dead) {
 				var pop = document.getElementById(popup);
 
 				relations.style.display = "none";
@@ -389,6 +474,12 @@
 
 				active = popup;
 
+				if (dead) {
+					FlipTrack(2)
+				} else {
+					FlipTrack(4)
+				}
+
 				sound_click.play();
 				sound_page.play();
 			}
@@ -396,6 +487,9 @@
 			function ShowRelations() {
 				relations.style.display = "block";
 				content.style.display = "none";
+				journal.style.display = "none";
+
+				FlipTrack(4)
 
 				sound_click.play();
 				sound_page.play();
@@ -404,6 +498,20 @@
 			function ShowContent() {
 				relations.style.display = "none";
 				content.style.display = "block";
+				journal.style.display = "none";
+
+				FlipTrack(4)
+
+				sound_click.play();
+				sound_page.play();
+			}
+
+			function ShowJournal() {
+				relations.style.display = "none";
+				content.style.display = "none";
+				journal.style.display = "block";
+
+				FlipTrack(3)
 
 				sound_click.play();
 				sound_page.play();
