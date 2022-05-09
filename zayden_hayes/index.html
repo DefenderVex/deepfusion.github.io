@@ -40,14 +40,17 @@
 			<div class="center">
 				<div class="container">
 					<hr>
+					<img src="images/states.png" style="transform: translateZ(24px);">
+					<hr>
 					<div class="card" id="profile_sia" style="display: none;">
 						<div class="profile">
 							<div class="text">
-								<h2><i class="unliked">Sia</i> <i class="admired">Baquera</i></h2>
-								<p><i class="primary">[03/04/2022]</i> "This is fucked up, after everything you wouldn't even consider the idea I was telling the truth. So you just <i class="unliked">strangle me</i> and call me a lier. I can't deal with this shit. I can't deal with you."</p>
+								<h2><i class="liked">Sia</i> <i class="admired">Baquera</i></h2>
+								<p><i class="primary">[08/05/2022]</i> "I've seen you <i class="cautious">struggling</i> a lot lately, we all have. I hope you find peace in the choice you have made Sia."</p>
+								<br><p><i class="primary">[03/04/2022]</i> "This is fucked up, after everything you wouldn't even consider the idea I was telling the truth. So you just <i class="annoyed"><b>strangle me</b></i> and call me a lier. I can't deal with this shit. I can't deal with you."</p>
 								<br><p>"I didn't actually ever plan to run into you again, I got lucky and got out before AC pretty much exploded like a scene out of Death Stranding and I wasn't exactly planning on coming back. Look it's not like it isn't nice to know you're not dead but I left for a reason."</p>
 							</div>
-							<div class="picture"><img src="images/profiles/sia.png" style="transform: rotate(0deg);"></div>
+							<div class="picture filter-dead"><img src="images/profiles/sia.png" style="transform: rotate(0deg);"></div>
 						</div>
 					</div>
 					<div class="card" id="profile_vasily" style="display: none;">
@@ -62,8 +65,9 @@
 					<div class="card" id="profile_teagan" style="display: none;">
 						<div class="profile">
 							<div class="text">
-								<h2><i class="admired">Teagan</i> <i class="idolized">Ridge</i></h2>
-								<p>"I know we haven't seen each other much since I enlisted but I can say the time I spent with you when I am around has been some of the best highlights of my life. If I have any say in it, you better be sticking around for the long haul hotshot."</p>
+								<h2><i class="admired">Teagan Ridge</i></h2>
+								<p><i class="primary">[08/05/2022]</i> "You.. Haven't really been around. <i class="optimistic">It's ok</i> I know you have a life else where, probably better not to have to wait on someone like me."</p>
+								<br><p>"I know we haven't seen each other much since I enlisted but I can say the time I spent with you when I am around has been some of the best highlights of my life. If I have any say in it, you better be sticking around for the long haul hotshot."</p>
 							</div>
 							<div class="picture"><img src="images/profiles/teagan.png" style="transform: rotate(-1deg);"></div>
 						</div>
@@ -117,8 +121,9 @@
 					<div class="card" id="profile_alex" style="display: none;">
 						<div class="profile">
 							<div class="text">
-								<h2><i class="unliked">Alex</i> <i class="admired">Howard</i></h2>
-								<p>"Saw you pretty much as my brother. Until recently anyway, I just can't deal with this crap right now. So just, fuck off."</p>
+								<h2><i class="idolized">Alex Howard</i></h2>
+								<p><i class="primary">[08/05/2022]</i> "I know its hard right now, but <i class="hopeful">it'll be ok.</i> I know River loves you and I'll always be here for my brother. Doesn't matter what mess you get yourself into."</p>
+								<br><p><i class="blur">"Saw you pretty much as my brother. Until recently anyway, I just can't deal with this crap right now. So just, fuck off."</i></p>
 							</div>
 							<div class="picture"><img src="images/profiles/alex.png" style="transform: rotate(-3deg);"></div>
 						</div>
@@ -141,6 +146,24 @@
 							<div class="picture"><img src="images/profiles/scott.png" style="transform: rotate(-1deg);"></div>
 						</div>
 					</div>
+					<div class="card" id="profile_adam" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="unliked">Adam</i> <i class="liked">Sol</i></h2>
+								<p>"You make it really hard to get along with you sometimes you know that right? Go on about wanting something then get all pissy when you surprise surprise find out it has downsides."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/placeholder.png" style="transform: rotate(0deg);"></div>
+						</div>
+					</div>
+					<div class="card" id="profile_asher" style="display: none;">
+						<div class="profile">
+							<div class="text">
+								<h2><i class="liked">Asher</i> <i class="admired">Pierce</i></h2>
+								<p>"You're the kinda guy I can get along with, little fuckin' dim at times but i'm really not the shit to talk about that. Don't go dying on me Marine."</p>
+							</div>
+							<div class="picture"><img src="images/profiles/asher.png" style="transform: rotate(1.5deg);"></div>
+						</div>
+					</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
 					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/profile.svg');"></span>
@@ -160,9 +183,9 @@
 					<hr>
 					<div class="carousel">
 						<div class="polaroids">
-							<div class="image">
+							<div class="image filter-dead">
 								<img src="images/profiles/sia.png" style="transform: rotate(0deg);">
-								<a onclick="ShowPopup('profile_sia')"><h4><i class="unliked">Sia</i> <i class="admired">Baquera</i></h4></a>
+								<a onclick="ShowPopup('profile_sia', true)"><h4><i class="liked">Sia</i> <i class="admired">Baquera</i></h4></a>
 							</div>
 							<div class="image">
 								<img src="images/profiles/vasily.png" style="transform: rotate(2deg);">
@@ -170,7 +193,7 @@
 							</div>
 							<div class="image">
 								<img src="images/profiles/teagan.png" style="transform: rotate(-1deg);">
-								<a onclick="ShowPopup('profile_teagan')"><h4><i class="admired">Teagan</i> <i class="idolized">Ridge</i></h4></a>
+								<a onclick="ShowPopup('profile_teagan')"><h4><i class="admired">Teagan Ridge</i></h4></a>
 							</div>
 							<div class="image filter-dead">
 								<img src="images/profiles/bastianna.png" style="transform: rotate(1deg);">
@@ -198,7 +221,7 @@
 						<div class="polaroids">
 							<div class="image">
 								<img src="images/profiles/alex.png" style="transform: rotate(-3deg);">
-								<a onclick="ShowPopup('profile_alex')"><h4><i class="unliked">Alex</i> <i class="admired">Howard</i></h4></a>
+								<a onclick="ShowPopup('profile_alex')"><h4><i class="idolized">Alex Howard</i></h4></a>
 							</div>
 							<div class="image">
 								<img src="images/profiles/placeholder.png" style="transform: rotate(1deg);">
@@ -208,13 +231,24 @@
 								<img src="images/profiles/scott.png" style="transform: rotate(-1deg);">
 								<a onclick="ShowPopup('profile_scott')"><h4><i class="admired">Scott Whitaker</i></h4></a>
 							</div>
+							<div class="image">
+								<img src="images/profiles/placeholder.png" style="transform: rotate(0deg);">
+								<a onclick="ShowPopup('profile_adam')"><h4><i class="unliked">Adam</i> <i class="liked">Sol</i></h4></a>
+							</div>
+						</div>
+						<div class="polaroids">
+							<div class="image">
+								<img src="images/profiles/asher.png" style="transform: rotate(1.5deg);">
+								<a onclick="ShowPopup('profile_asher')"><h4><i class="liked">Asher</i> <i class="admired">Pierce</i></h4></a>
+							</div>
 						</div>
 					</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
-					  <span class="dot" onclick="currentPolaroid(1)" style="transform: rotate(0deg);"></span>
-					  <span class="dot" onclick="currentPolaroid(2)" style="transform: rotate(15deg);"></span>
+						<span class="dot" onclick="currentPolaroid(1)" style="transform: rotate(0deg);"></span>
+						<span class="dot" onclick="currentPolaroid(2)" style="transform: rotate(15deg);"></span>
 						<span class="dot" onclick="currentPolaroid(3)" style="transform: rotate(-30deg);"></span>
+						<span class="dot" onclick="currentPolaroid(4)" style="transform: rotate(45deg);"></span>
 					</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
@@ -232,7 +266,8 @@
 				<div class="container">
 					<hr>
 					<div class="journal">
-						<p><i class="primary">[05/04/2022]</i> "Last week has been pretty twisted up. Wasn't sure if things could get any worse after spending three weeks down there just to escape and start kicking the bucket. And now I'm like <b>this.</b> Its messed up what they did but, it feels more twisted I'm glad they couldn't ask me permission to do it. I don't think I could've said yes."<p>
+						<p><i class="primary">[08/05/2022]</i> "Fucking hell it's been all over the place the last month. Can't catch a break. The whole shit with the angels, now Sia's gone and I've still got to go off and fight a fallen archangel and banish him back to hell. Least this new jarhead rocked into town, pretty cool guy to hang out with."<p>
+						<br><p><i class="primary">[05/04/2022]</i> "Last week has been pretty twisted up. Wasn't sure if things could get any worse after spending three weeks down there just to escape and start kicking the bucket. And now I'm like <b>this.</b> Its messed up what they did but, it feels more twisted I'm glad they couldn't ask me permission to do it. I don't think I could've said yes."<p>
 					</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">

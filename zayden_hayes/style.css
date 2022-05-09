@@ -140,12 +140,40 @@ h2 {
 
 i {
 	margin: 0;
-	disilay: inline;
+	display: inline;
 	font-style: normal;
+}
+
+i.blur {
+	filter: blur(3px);
 }
 
 i.primary {
 	color: #e08026;
+}
+
+i.angered {
+	color: #773333;
+}
+
+i.annoyed {
+	color: #ae5c34;
+}
+
+i.cautious {
+	color: #645b4c;
+}
+
+i.optimistic {
+	color: #729a4b;
+}
+
+i.hopeful {
+	color: #509181;
+}
+
+i.excited {
+	color: #6e3f5c;
 }
 
 i.feared {
