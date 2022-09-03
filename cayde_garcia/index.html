@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+	<head>
+		<title>Character Sheet - "Scott"</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="icon" type="image/x-icon" href="images/dot_orange.svg">
+	</head>
+
+	<body>
+		<div class="content" id="splash" onclick="CloseSplash()" style="display: block;">
+			<div class="center">
+				<div class="container">
+					<h1 style="text-align: center;">CLICK ANYWHERE TO CONTINUE</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="content" id="content">
+			<div class="center">
+				<div class="container">
+					<hr>
+					<div class="profile">
+						<div class="picture"><img src="images/profiles/cayde.png" onclick="vargr()"></div>
+						<div class="text"><h1>"Scott"</h1></div>
+					</div>
+					<hr>
+					<img src="images/info.png" style="transform: translateZ(24px);">
+					<hr>
+					<div style="text-align: center; transform: translateZ(24px);">
+					<span class="icon active" onclick="ShowContent()" style="background-image: url('images/icons/profile.svg');"></span>
+					<span class="icon" onclick="ShowRelations()" style="background-image: url('images/icons/contacts.svg');"></span>
+					<span class="icon" onclick="ShowJournal()" style="background-image: url('images/icons/journal.svg');"></span>
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+
+		<div class="content" id="popups">
+			<div class="center">
+				<div class="container">
+					<hr>
+					<img src="images/states.png" style="transform: translateZ(24px);">
+					<hr>
+						<!-- Cards get placed here -->
+						<div include-html="cards.html"></div>
+					<hr>
+					<div style="text-align: center; transform: translateZ(24px);">
+					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/profile.svg');"></span>
+					<span class="icon" onclick="ClosePopups()" style="background-image: url('images/icons/contacts.svg');"></span>
+					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/journal.svg');"></span>
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+
+		<div class="content" id="relations">
+			<div class="center">
+				<div class="container">
+					<hr>
+					<img src="images/grade.png" style="transform: translateZ(24px);">
+					<hr>
+						<!-- Polaroids get placed here in groups of 4 -->
+						<div include-html="polaroids.html"></div>
+					<hr>
+					<div style="text-align: center; transform: translateZ(24px);">
+						<span class="dot" onclick="currentPolaroid(1)" style="transform: rotate(0deg);"></span>
+						<!--<span class="dot" onclick="currentPolaroid(2)" style="transform: rotate(15deg);"></span>
+						<span class="dot" onclick="currentPolaroid(3)" style="transform: rotate(-30deg);"></span>
+						<span class="dot" onclick="currentPolaroid(4)" style="transform: rotate(45deg);"></span>-->
+					</div>
+					<hr>
+					<div style="text-align: center; transform: translateZ(24px);">
+					<span class="icon" onclick="ShowContent()" style="background-image: url('images/icons/profile.svg');"></span>
+					<span class="icon active" onclick="" style="background-image: url('images/icons/contacts.svg');"></span>
+					<span class="icon" onclick="ShowJournal()" style="background-image: url('images/icons/journal.svg');"></span>
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+
+		<div class="content" id="journal">
+			<div class="center">
+				<div class="container">
+					<hr>
+					<div class="journal">
+						<!-- Journal pages get placed here -->
+					</div>
+					<hr>
+					<div style="text-align: center; transform: translateZ(24px);">
+					<span class="icon" onclick="ShowContent()" style="background-image: url('images/icons/profile.svg');"></span>
+					<span class="icon" onclick="ShowRelations()" style="background-image: url('images/icons/contacts.svg');"></span>
+					<span class="icon active" onclick="" style="background-image: url('images/icons/journal.svg');"></span>
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
