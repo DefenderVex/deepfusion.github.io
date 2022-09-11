@@ -20,8 +20,8 @@
 				<div class="container">
 					<hr>
 					<div class="profile">
-						<div class="picture"><img src="images/profiles/placeholder.png" onclick="vargr()"></div>
-						<div class="text"><h1>"Scott"</h1></div>
+						<div class="picture"><img src="images/profiles/scott.png" onclick="vargr()"></div>
+						<div class="text"><h1>Cayde "Scott" Garcia</h1></div>
 					</div>
 					<hr>
 					<img src="images/info.png" style="transform: translateZ(24px);">
@@ -43,7 +43,7 @@
 					<img src="images/states.png" style="transform: translateZ(24px);">
 					<hr>
 						<!-- Cards get placed here -->
-						<div id="cardsSection"></div>
+						<div id="cardsSection" style="transform: translateZ(24px);"></div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
 					<span class="icon_inactive" onclick="" style="background-image: url('images/icons/profile.svg');"></span>
@@ -61,8 +61,10 @@
 					<hr>
 					<img src="images/grade.png" style="transform: translateZ(24px);">
 					<hr>
-						<!-- Polaroids get placed here in groups of 4 -->
-						<div id="polaroidSection"></div>
+						<div class="carousel">
+							<!-- Polaroids get placed here in groups of 4 -->
+							<div id="polaroidSection" style="transform: translateZ(24px);"></div>
+						</div>
 					<hr>
 					<div style="text-align: center; transform: translateZ(24px);">
 						<span class="dot" onclick="currentPolaroid(1)" style="transform: rotate(0deg);"></span>
@@ -99,10 +101,9 @@
 			</div>
 		</div>
 
-		<script>
-			$("#polaroidSection").load("polaroids.html");
-			$("#cardsSection").load("cards.html");
-		</script>
+		<div class="float">
+			<span id="volume" class="icon" onclick="ToggleVolume()" style="margin: 0; background-image: url('images/icons/sound.svg');"></span>
+		</div>
 
 		<script src="script.js"></script>
 	</body>

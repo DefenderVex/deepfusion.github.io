@@ -13,6 +13,15 @@ body {
 	margin: 0;
 }
 
+.float {
+	height: 64px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	margin-top: 12px;
+	margin-right: 12px;
+}
+
 .container {
 	margin: auto;
 	position: relative;
@@ -152,15 +161,16 @@ i.primary {
 	color: #e08026;
 }
 
+
 i.angered {
 	color: #773333;
 }
 
-i.annoyed {
+i.fearful {
 	color: #ae5c34;
 }
 
-i.cautious {
+i.disgusted {
 	color: #645b4c;
 }
 
@@ -168,13 +178,14 @@ i.optimistic {
 	color: #729a4b;
 }
 
-i.hopeful {
+i.surprised {
 	color: #509181;
 }
 
 i.excited {
 	color: #6e3f5c;
 }
+
 
 i.feared {
 	color: #c0392b;
@@ -203,6 +214,7 @@ i.admired {
 i.idolized {
 	color: #9b59b6;
 }
+
 
 h3 {
 	font-weight: normal;
@@ -296,7 +308,7 @@ p {
 }
 
 .profile h1 {
-	font-size: 92px;
+	font-size: 64px;
 	text-align: right;
 	line-height: 256px;
 	font-weight: normal;

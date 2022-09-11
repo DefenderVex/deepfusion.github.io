@@ -1,10 +1,17 @@
 ////////////////////////////////////////////////////////
 
+$("#polaroidSection").load("polaroids.html");
+$("#cardsSection").load("cards.html");
+
+////////////////////////////////////////////////////////
+
 var sound_page = new Audio("sounds/window_open.wav");
 var sound_click = new Audio("sounds/button_click.wav");
 
 var polaroidsIndex = 1;
-showPolaroids(polaroidsIndex);
+window.addEventListener("load", function () {
+	showPolaroids(polaroidsIndex);
+});
 
 // Next/previous controls
 function plusPolaroids(n) {
@@ -91,8 +98,8 @@ var sound_page = new Audio("sounds/window_open.wav");
 var sound_hover = new Audio("sounds/button_hover.wav");
 var sound_click = new Audio("sounds/button_click.wav");
 
-var sound_bg = new Audio("sounds/playlist/4.mp3");
-var bg_loop = new Audio("sounds/playlist/4_loop.mp3");
+var sound_bg = new Audio("sounds/bg.mp3");
+var bg_loop = new Audio("sounds/bg_loop.mp3");
 
 var volume_max = 0.5;
 
@@ -146,41 +153,9 @@ sound_bg.addEventListener("ended", function() {
 
 bg_loop.addEventListener("ended", function() {
 	looping = true;
- this.currentTime = 0;
- this.play();
+	this.currentTime = 0;
+	this.play();
 }, false);
-
-var curTrack = 4;
-
-function FlipTrack(track) {
-	if (curTrack == track) {
-		return
-	}
-
-	if (looping) {
-		var cur1 = bg_loop.currentTime
-
-		bg_loop.pause();
-
-		bg_loop.src = "sounds/playlist/" + track + "_loop.mp3"
-		bg_loop.load();
-		bg_loop.currentTime = cur1
-		bg_loop.play();
-	} else {
-		var cur2 = sound_bg.currentTime
-
-		sound_bg.pause();
-
-		sound_bg.src = "sounds/playlist/" + track + ".mp3"
-		bg_loop.src = "sounds/playlist/" + track + "_loop.mp3"
-		sound_bg.load();
-		bg_loop.load();
-		sound_bg.currentTime = cur2
-		sound_bg.play();
-	}
-
-	curTrack = track;
-}
 
 function CloseSplash() {
 	var splash = document.getElementById("splash");
@@ -199,8 +174,6 @@ function ClosePopups() {
 	popups.style.display = "none";
 	pop.style.display = "none";
 
-	FlipTrack(4)
-
 	sound_click.play();
 	sound_page.play();
 }
@@ -214,12 +187,6 @@ function ShowPopup(popup, dead) {
 
 	active = popup;
 
-	if (dead) {
-		FlipTrack(2)
-	} else {
-		FlipTrack(4)
-	}
-
 	sound_click.play();
 	sound_page.play();
 }
@@ -228,8 +195,6 @@ function ShowRelations() {
 	relations.style.display = "block";
 	content.style.display = "none";
 	journal.style.display = "none";
-
-	FlipTrack(4)
 
 	sound_click.play();
 	sound_page.play();
@@ -240,8 +205,6 @@ function ShowContent() {
 	content.style.display = "block";
 	journal.style.display = "none";
 
-	FlipTrack(4)
-
 	sound_click.play();
 	sound_page.play();
 }
@@ -251,10 +214,28 @@ function ShowJournal() {
 	content.style.display = "none";
 	journal.style.display = "block";
 
-	FlipTrack(3)
-
 	sound_click.play();
 	sound_page.play();
+}
+
+var muted = false;
+
+function ToggleVolume() {
+	var toggle = document.getElementById("volume");
+
+	if (sound_bg.volume > 0) {
+		sound_bg.volume = 0;
+		bg_loop.volume = 0;
+		volume_max = 0;
+		toggle.style.backgroundImage = "url('images/icons/muted.svg')";
+	} else {
+		volume_max = 0.5;
+		sound_bg.volume = volume_max;
+		bg_loop.volume = volume_max;
+		toggle.style.backgroundImage = "url('images/icons/sound.svg')";
+	}
+
+	sound_click.play();
 }
 
 /////////////////////////////////////////////
