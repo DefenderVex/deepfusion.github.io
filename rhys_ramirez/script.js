@@ -45,8 +45,8 @@ function showPolaroids(n) {
 ////////////////////////////////////////////////////////
 
 var baseSize = {
-	w: 2560 * 0.9,
-	h: 1440 * 0.9
+	w: 1920 * 0.9,
+	h: 1080 * 0.9
 }
 
 function updateScale() {
