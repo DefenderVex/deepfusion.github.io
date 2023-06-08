@@ -1,8 +1,15 @@
 @font-face {
-  font-family: "Traveling Typewriter";
-  font-style: normal;
-  font-weight: normal;
-  src: url("fonts/traveling_typewriter.woff") format("woff");
+	font-family: "Traveling Typewriter";
+	font-style: normal;
+	font-weight: normal;
+	src: url("fonts/traveling_typewriter.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Sigali";
+	font-style: normal;
+	font-weight: normal;
+	src: url("fonts/sigali.woff") format("woff");
 }
 
 body {
@@ -157,10 +164,13 @@ i.blur {
 	filter: blur(3px);
 }
 
+i.runes {
+	font-family: "Sigali";
+}
+
 i.primary {
 	color: #e08026;
 }
-
 
 i.angered {
 	color: #773333;
