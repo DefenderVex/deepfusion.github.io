@@ -142,6 +142,10 @@ h2 {
 	filter: blur(3px) saturate(200%) sepia(75%);
 }
 
+.filter-dead:hover {
+	filter: blur(1px) saturate(200%) sepia(75%);
+}
+
 .filter-sepia {
 	filter: saturate(200%) sepia(75%);
 }
@@ -195,7 +199,6 @@ i.surprised {
 i.excited {
 	color: #6e3f5c;
 }
-
 
 i.feared {
 	color: #c0392b;
