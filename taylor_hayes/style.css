@@ -171,7 +171,7 @@ body {
 	margin-left: 4px;
 	width: calc((var(--content-width) * 2) + 22px);
 	height: calc(100% - 48px);
-	background: url('/assets/pattern.png') repeat;
+	background: url('./assets/pattern.png') repeat;
 	background-size: 2048px 2048px;
 	opacity: 0.1;
 	pointer-events: none;
