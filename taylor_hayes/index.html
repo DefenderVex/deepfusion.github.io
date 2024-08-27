@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+	<title>Liminal '84 - Taylor Hayes</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="main">
+	<div id="overlay"></div>
+	<div class="content">
+		<div id="title">
+			<img height="64px" style="margin-left: 12px;" src="/assets/biography.svg">
+			<h1>CHARACTER BIOGRAPHY</h1>
+		</div>
+
+		<div class="row_profile">
+			<div class="row_profile_left">
+				<div class="row_profile_text"><h2><b>NAME:</b> TAYLOR CLAYTON HAYES</h2></div>
+				<div class="row_profile_text"><h2><b>OCCUPATION:</b> NATIONAL PARK SERVICE RANGER</h2></div>
+				<div class="row_profile_text"><h2><b>SPECIALTY:</b> WILDERNESS / SEARCH & RESCUE</h2></div>
+			</div>
+			<div class="row_profile_pic"><img src="/assets/profile.png"></div>
+		</div>
+
+		<div class="row">
+			<h2><b>NATIONALITY:</b> UNITED STATES</h2><div class="divider"></div>
+			<h2><b>DOB:</b> <i class="censor">--</i>/<i class="censor">--</i>/<i class="censor">--</i></h2><div class="divider"></div>
+			<h2><b>AGE:</b> 25</h2>
+		</div>
+
+		<div class="row">
+			<h2><b>ADDRESS:</b> <i class="censor">----</i> GRANITE ROAD, UNIT 3, GRANITE COUNTY, VA 2<i class="censor">----</i></h2>
+		</div>
+
+		<div class="row">
+			<h2><b>SEX:</b> MALE</h2><div class="divider"></div>
+			<h2><b>EYES:</b> GREEN-BROWN</h2><div class="divider"></div>
+			<h2><b>HAIR:</b> MID-LENGTH DARK BLONDE</h2>
+		</div>
+
+		<div class="row">
+			<h2><b>WEIGHT:</b> 169 LBS</h2><div class="divider"></div>
+			<h2><b>HEIGHT:</b> 5'10"</h2><div class="divider"></div>
+			<h2><b>BLOOD:</b> <i class="censor">--</i></h2><div class="divider"></div>
+			<h2><b>BUILD:</b> ATHLETIC</h2>
+		</div>
+		
+		<div class="row">
+			<h2><b>IDENTIFYING MARKS:</b> <i class="censor">there isn't anything here lol xD</i></h2>
+		</div>
+
+		<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."</p>
+	</div>
+
+
+	<div class="content">
+		<div id="title">
+			<img height="64px" style="margin-left: 12px;" src="/assets/relations.svg">
+			<h1>CHARACTER RELATIONS</h1>
+		</div>
+
+		<div class="row" style="padding-left: calc((var(--content-width) - (64px * 10) + 34px) / 2);">
+			<div class="divider"></div>
+			<div class="relation_status"><div class="relation_color feared"></div></div>
+			<div class="relation_status"><div class="relation_color hated"></div></div>
+			<div class="relation_status"><div class="relation_color disliked"></div></div>
+			<div class="relation_status"><div class="relation_color abrasive"></div></div>
+			<div class="relation_status"><div class="relation_color neutral"></div></div>
+			<div class="relation_status"><div class="relation_color amicable"></div></div>
+			<div class="relation_status"><div class="relation_color liked"></div></div>
+			<div class="relation_status"><div class="relation_color admired"></div></div>
+			<div class="relation_status"><div class="relation_color idolized"></div></div>
+		</div>
+
+		<div class="row_relation">
+			<div class="row_profile_left">
+				<div class="row_profile_text"><div class="relation_status"><div class="relation_color amicable"></div></div><h2><b>NAME:</b> RYAN WHITAKER</h2></div>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."</p>
+			</div>
+			<div class="row_profile_pic"><div class="row_profile_placeholder"></div><!--<img src="/assets/missing.png">--></div>
+		</div>
+	</div>
+	</div>
+
+	<script>
+		// Set the number of rows and characters per row
+		const numRows = 8;
+		const charsPerRow = 14;
+
+		// Function to generate a random string of characters
+		function generateRandomString(length) {
+			const characters = '░▒▓';
+			let result = '';
+			for (let i = 0; i < length; i++) {
+				result += characters.charAt(Math.floor(Math.random() * characters.length));
+			}
+
+			return result;
+		}
+
+		// Function to fill divs with random characters while maintaining length
+		function fillDivsWithRandomChars() {
+			const divs = document.querySelectorAll('.censor');
+			divs.forEach((div) => {
+				const originalLength = div.textContent.length;
+				const randomChars = generateRandomString(originalLength);
+				div.textContent = randomChars;
+			});
+		}
+
+		// Function to fill the divs with random strings
+		function fillDivs() {
+			const divs = document.querySelectorAll('.row_profile_placeholder');
+			divs.forEach((div) => {
+				div.innerHTML = '';
+				for (let i = 0; i < numRows; i++) {
+					const row = document.createElement('div');
+					row.textContent = generateRandomString(charsPerRow);
+					div.appendChild(row);
+				}
+			});
+		}
+
+		// Function to clear and refill the divs every second
+		function refreshDivs() {
+			fillDivs();
+			//fillDivsWithRandomChars();
+			setTimeout(refreshDivs, 1000);
+		}
+
+		// Start the refreshing process
+		refreshDivs();
+	</script>
+
+	<script>
+		// content auto-scaler
+		(function() {
+			const baseResolution = 1279;
+			const currentResolution = window.innerHeight;
+			const scaleFactor = currentResolution / baseResolution;
+			document.body.style.transform = `scale(${scaleFactor})`;
+			document.body.style.transformOrigin = 'top left';
+			document.body.style.height = `${100 / scaleFactor}vh`;
+
+			window.addEventListener('resize', function() {
+				const currentResolution = window.innerHeight;
+				const scaleFactor = currentResolution / baseResolution;
+				document.body.style.transform = `scale(${scaleFactor})`;
+				document.body.style.height = `${100 / scaleFactor}vh`;
+			});
+		})();
+	</script>
+</body>
