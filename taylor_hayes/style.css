@@ -47,18 +47,19 @@ body {
 
 .relation_status {
 	width: 40px;
-	height: 64px;
+	height: 63px;
 	display: flex;
 	padding-right: 12px;
-	margin-right: 12px;
-	border-right: 2px solid var(--primary);
+	padding-left: 12px;
+	padding-top: 1px;
 	color: var(--primary);
+	background-color: var(--background);
 }
 
 .relation_color {
 	height: 40px;
 	width: 40px;
-	margin-top: 12px;
+	margin-top: 11px;
 	text-align: center;
 	color: var(--background);
 	font-size: 24px;
@@ -90,6 +91,10 @@ body {
 }*/
 
 .relation_color.feared {
+	background-color: #833131;
+}
+
+.relation_color.deathwish {
 	background-color: #c0392b;
 }
 
@@ -123,6 +128,10 @@ body {
 
 .relation_color.idolized {
 	background-color: #9b59b6;
+}
+
+.relation_color.loved {
+	background-color: #6f2da5;
 }
 
 .row_profile_left {
@@ -220,6 +229,12 @@ p {
 
 .censor {
 	background-color: var(--primary);
+}
+
+.scramble {
+	white-space: normal;
+	text-wrap: pretty;
+	line-height: 32px;
 }
 
 .divider {
