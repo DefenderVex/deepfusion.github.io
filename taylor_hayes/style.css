@@ -3,6 +3,7 @@
 :root {
 	--primary: rgb(226, 127, 29);
 	--background: rgb(12, 12, 12);
+	--failure: rgb(255, 49, 38);
 	--content-width: calc((1279px * 0.71) - 12px - 6px);
  }
  
@@ -49,8 +50,8 @@ body {
 	width: 40px;
 	height: 63px;
 	display: flex;
-	padding-right: 12px;
-	padding-left: 12px;
+	padding-right: 18px;
+	padding-left: 18px;
 	padding-top: 1px;
 	color: var(--primary);
 	background-color: var(--background);
@@ -62,7 +63,7 @@ body {
 	margin-top: 11px;
 	text-align: center;
 	color: var(--background);
-	font-size: 24px;
+	font-size: 18px;
 	line-height: 40px;
 }
 
@@ -161,10 +162,14 @@ body {
 	height: 200px;
 	font-family: 'Courier New', Courier, monospace;
 	margin: 0;
-	text-wrap: wrap;
+	text-wrap: nowrap;
+	font-size: 26px;
 	overflow: hidden;
-	line-height: 25px;
-	font-size: 24px;
+}
+
+.placeholder_line {
+	/*height: 20px;
+	overflow: hidden;*/
 }
 
 #main {
@@ -232,9 +237,11 @@ p {
 }
 
 .scramble {
-	white-space: normal;
-	text-wrap: pretty;
-	line-height: 32px;
+	/*font-size: 16px;
+	height: 25px;
+	overflow: hidden;*/
+	margin-bottom: 0;
+	margin-top: 10px;
 }
 
 .divider {

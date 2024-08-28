@@ -49,7 +49,7 @@
 			<h2><b>IDENTIFYING MARKS:</b> <i class="censor">there isn't actually anything here to see</i></h2>
 		</div>
 
-		<p class="scramble">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."</p>
+		<p>To be continued...</p>
 	</div>
 
 
@@ -59,7 +59,7 @@
 			<h1>CHARACTER RELATIONS</h1>
 		</div>
 
-		<div class="row" style="padding-left: calc((var(--content-width) / 2) - ((64px * 11) / 2));">
+		<div class="row" style="padding-left: calc((var(--content-width) / 2) - ((76px * 11) / 2));">
 			<div class="relation_status"><div class="relation_color feared">-5</div></div>
 			<div class="relation_status"><div class="relation_color deathwish">-4</div></div>
 			<div class="relation_status"><div class="relation_color hated">-3</div></div>
@@ -75,7 +75,7 @@
 
 		<div class="row_relation">
 			<div class="row_profile_left">
-				<div class="row_profile_text"><div class="relation_color amicable">+1</div><div class="divider"></div><h2><b>NAME:</b> CHLOE EVERS</h2></div>
+				<div class="row_profile_text"><div class="relation_color amicable">1.5</div><div class="divider"></div><h2><b>NAME:</b> CHLOE EVERS</h2></div>
 				<p>Work college from the park service, don't know how she ended up sent here or if she "volunteered" after I did.</p>
 			</div>
 			<div class="row_profile_pic"><div class="row_profile_placeholder"></div><!--<img src="/assets/missing.png">--></div>
@@ -83,18 +83,40 @@
 
 		<div class="row_relation">
 			<div class="row_profile_left">
-				<div class="row_profile_text"><div class="relation_color amicable">+1</div><div class="divider"></div><h2><b>NAME:</b> RYAN WHITAKER</h2></div>
+				<div class="row_profile_text"><div class="relation_color amicable">1.0</div><div class="divider"></div><h2><b>NAME:</b> RYAN WHITAKER</h2></div>
 				<p>He's the local sheriff, ran into him once or twice. Mostly just work related though. Said I had good timing showing up when I did, busy season for "gettin' lost" in the woods.</p>
 			</div>
 			<div class="row_profile_pic"><div class="row_profile_placeholder"></div><!--<img src="/assets/missing.png">--></div>
 		</div>
+
+		<p>Attempting to retrieve further data...</p>
+		<p class="scramble">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
+		<p class="scramble">et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u</p>
+		<p class="scramble">t aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+		<p class="scramble">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in c</p>
+		<p class="scramble">ulpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natusaa</p>
+		<p class="scramble">rror sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
+		<p class="scramble">inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam volupt</p>
+		<p class="scramble">atem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui</p>
+		<p class="scramble">ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit ame</p>
+		<p class="scramble">t, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolo</p>
+		<p class="scramble">re magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam</p>
+		<p class="scramble">corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iurer</p>
+		<p class="scramble">eprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolor</p>
+		<p class="scramble">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo</p>
+		<p class="scramble">et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u</p>
+		<p class="scramble">t aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+		<p class="scramble">ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit ame</p>
+		<p class="scramble">ulpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natusaa</p>
+		<p class="scramble">rror sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
+		<p class="scramble">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in c</p>
 	</div>
 	</div>
 
 	<script>
 		// Set the number of rows and characters per row
-		const numRows = 8;
-		const charsPerRow = 14;
+		const numRows = 7;
+		const charsPerRow = 13;
 
 		// Function to generate a random string of characters
 		function generateRandomString(length, characters) {
@@ -131,17 +153,27 @@
 		});
 		}
 
-		// Function to fill the divs with random strings
+		// Function to fill the divs with random strings, including the word "MISSING" in the middle row
 		function fillDivs() {
-			const divs = document.querySelectorAll('.row_profile_placeholder');
-			divs.forEach((div) => {
-				div.innerHTML = '';
-				for (let i = 0; i < numRows; i++) {
-					const row = document.createElement('div');
-					row.textContent = generateRandomString(charsPerRow, '░▒▓');
-					div.appendChild(row);
+		const divs = document.querySelectorAll('.row_profile_placeholder');
+		divs.forEach((div) => {
+			div.innerHTML = '';
+
+			for (let i = 0; i < numRows; i++) {
+				const row = document.createElement('div');
+				row.setAttribute('class', 'placeholder_line');
+
+				if (i === 99) {
+				const errorIndex = Math.floor(Math.random() * (charsPerRow - 13));
+				row.textContent = generateRandomString(errorIndex, '▒▓') + "[[ ERR-IMG ]]" + generateRandomString(charsPerRow - errorIndex - 13, '▒▓');
+				row.style.color = 'var(--failure)'
+				} else {
+				row.textContent = generateRandomString(charsPerRow, '▒▓');
 				}
-			});
+
+				div.appendChild(row);
+			}
+		});
 		}
 
 		// Function to clear and refill the divs every second
