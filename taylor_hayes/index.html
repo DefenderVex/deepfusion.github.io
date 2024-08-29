@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <head>
-	<title>Liminal '84 - Taylor Hayes</title>
+	<title>Taylor Hayes</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<div id="main">
 	<div id="overlay"></div>
-	<div class="content">
+	<div id="boot"><h1 style="color: var(--primary); text-align: center;">CLICK ANYWHERE TO LOAD</h1></div>
+	<div id="main" style="display: none;">
+
+	<div class="content" style="transform: perspective(1000px) rotateY(3deg);">
 		<div id="title">
 			<img height="64px" style="margin-left: 12px;" src="./assets/biography.svg">
 			<h1>CHARACTER BIOGRAPHY</h1>
@@ -53,13 +55,13 @@
 	</div>
 
 
-	<div class="content">
+	<div class="content" style="transform: perspective(1000px) rotateY(-3deg);">
 		<div id="title">
 			<img height="64px" style="margin-left: 12px;" src="./assets/relations.svg">
 			<h1>CHARACTER RELATIONS</h1>
 		</div>
 
-		<div class="row" style="padding-left: calc((var(--content-width) / 2) - ((76px * 11) / 2));">
+		<div class="row" style="padding-left: calc((var(--content-width) / 2) - ((80px * 11) / 2));">
 			<div class="relation_status"><div class="relation_color feared">-5</div></div>
 			<div class="relation_status"><div class="relation_color deathwish">-4</div></div>
 			<div class="relation_status"><div class="relation_color hated">-3</div></div>
@@ -73,26 +75,26 @@
 			<div class="relation_status"><div class="relation_color loved">+5</div></div>
 		</div>
 
-		<div style="height: calc(100% - 130px); overflow: scroll; scroll-snap-type: y mandatory;">
+		<div class="scroller" style="height: calc(100% - 130px); overflow: scroll; scroll-snap-type: y mandatory;">
 		<div class="row_relation">
 			<div class="row_profile_left">
-				<div class="row_profile_text"><div class="relation_color amicable">1.5</div><div class="divider"></div><h2><b>NAME:</b> CHLOE EVERS</h2></div>
+				<div class="row_profile_text"><div class="relation_color positive">1.5</div><div class="divider"></div><h2><b>NAME:</b> CHLOE EVERS</h2></div>
 				<p>Work college from the park service, don't know how she ended up sent here or if she "volunteered" after I did.</p>
 			</div>
-			<div class="row_profile_pic"><div class="row_profile_placeholder"></div><!--<img src="./assets/missing.png">--></div>
+			<div class="row_profile_pic"><!--<div class="row_profile_placeholder"></div>--><img src="./assets/relations/chloe_evers.png"></div>
 		</div>
 
 		<div class="row_relation">
 			<div class="row_profile_left">
-				<div class="row_profile_text"><div class="relation_color amicable">1.0</div><div class="divider"></div><h2><b>NAME:</b> RYAN WHITAKER</h2></div>
+				<div class="row_profile_text"><div class="relation_color positive">1.0</div><div class="divider"></div><h2><b>NAME:</b> RYAN WHITAKER</h2></div>
 				<p>He's the local sheriff, ran into him once or twice. Mostly just work related though. Said I had good timing showing up when I did, busy season for "gettin' lost" in the woods.</p>
 			</div>
-			<div class="row_profile_pic"><div class="row_profile_placeholder"></div><!--<img src="./assets/missing.png">--></div>
+			<div class="row_profile_pic"><img src="./assets/relations/ryan_whitaker.png"></div>
 		</div>
 
 		<div class="row_relation">
 			<div class="row_profile_left">
-				<div class="row_profile_text"><div class="relation_color amicable">1.5</div><div class="divider"></div><h2><b>NAME:</b> ELIJAH ESPINOSA</h2></div>
+				<div class="row_profile_text"><div class="relation_color positive">1.5</div><div class="divider"></div><h2><b>NAME:</b> ELIJAH ESPINOSA</h2></div>
 				<p class="scramble">ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit ame corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iurer inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo</p>
 			</div>
 			<div class="row_profile_pic"><img src="./assets/relations/elijah_espinosa.png"></div>
@@ -118,7 +120,6 @@
 			<p class="scramble">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in c</p>
 			<p class="scramble">ulpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natusaa</p>
 			<p class="scramble">rror sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
-			<p class="scramble">inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam volupt</p>
 			<p class="scramble">atem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui</p>
 			<p style="text-align: right; margin-top: 0;">... Still trying</p>
 		</div>
@@ -126,96 +127,6 @@
 	</div>
 	</div>
 
-	<script>
-		// Set the number of rows and characters per row
-		const numRows = 7;
-		const charsPerRow = 13;
-
-		// Function to generate a random string of characters
-		function generateRandomString(length, characters) {
-			let result = '';
-			for (let i = 0; i < length; i++) {
-				result += characters.charAt(Math.floor(Math.random() * characters.length));
-			}
-
-			return result;
-		}
-
-		// Function to fill divs with random characters while maintaining length and spaces
-		function fillDivsWithRandomChars() {
-		const divs = document.querySelectorAll('.scramble');
-		divs.forEach((div) => {
-			const originalText = div.textContent;
-			const originalSpaces = originalText.match(/\s/g) || [];
-			const originalChars = originalText.replace(/\s/g, '');
-
-			const randomChars = generateRandomString(originalChars.length, '░▒');
-
-			let newText = '';
-			let spaceIndex = 0;
-			for (let i = 0; i < originalText.length; i++) {
-				if (originalText[i] === ' ') {
-				newText += ' ';
-				spaceIndex++;
-				} else {
-				newText += randomChars[i - spaceIndex];
-				}
-			}
-
-			div.textContent = newText;
-		});
-		}
-
-		// Function to fill the divs with random strings, including the word "MISSING" in the middle row
-		function fillDivs() {
-		const divs = document.querySelectorAll('.row_profile_placeholder');
-		divs.forEach((div) => {
-			div.innerHTML = '';
-
-			for (let i = 0; i < numRows; i++) {
-				const row = document.createElement('div');
-				row.setAttribute('class', 'placeholder_line');
-
-				if (i === 99) {
-				const errorIndex = Math.floor(Math.random() * (charsPerRow - 13));
-				row.textContent = generateRandomString(errorIndex, '▒▓') + "[[ ERR-IMG ]]" + generateRandomString(charsPerRow - errorIndex - 13, '▒▓');
-				row.style.color = 'var(--failure)'
-				} else {
-				row.textContent = generateRandomString(charsPerRow, '▒▓');
-				}
-
-				div.appendChild(row);
-			}
-		});
-		}
-
-		// Function to clear and refill the divs every second
-		function refreshDivs() {
-			fillDivs();
-			fillDivsWithRandomChars();
-			setTimeout(refreshDivs, 1000);
-		}
-
-		// Start the refreshing process
-		refreshDivs();
-	</script>
-
-	<script>
-		// content auto-scaler
-		(function() {
-			const baseResolution = 1279;
-			const currentResolution = window.innerHeight;
-			const scaleFactor = currentResolution / baseResolution;
-			document.body.style.transform = `scale(${scaleFactor})`;
-			document.body.style.transformOrigin = 'top left';
-			document.body.style.height = `${100 / scaleFactor}vh`;
-
-			window.addEventListener('resize', function() {
-				const currentResolution = window.innerHeight;
-				const scaleFactor = currentResolution / baseResolution;
-				document.body.style.transform = `scale(${scaleFactor})`;
-				document.body.style.height = `${100 / scaleFactor}vh`;
-			});
-		})();
-	</script>
+	<script src="script.js"></script>
+	<script src="fancy.js"></script>
 </body>

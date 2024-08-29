@@ -52,8 +52,8 @@ body {
 	width: 40px;
 	height: 63px;
 	display: flex;
-	padding-right: 18px;
-	padding-left: 18px;
+	padding-right: 20px;
+	padding-left: 20px;
 	padding-top: 1px;
 	color: var(--primary);
 	background-color: var(--background);
@@ -68,30 +68,6 @@ body {
 	font-size: 18px;
 	line-height: 40px;
 }
-
-/*.relation_color.angered {
-	background-color: #773333;
-}
-
-.relation_color.fearful {
-	background-color: #ae5c34;
-}
-
-.relation_color.disgusted {
-	background-color: #645b4c;
-}
-
-.relation_color.optimistic {
-	background-color: #729a4b;
-}
-
-.relation_color.surprised {
-	background-color: #509181;
-}
-
-.relation_color.excited {
-	background-color: #6e3f5c;
-}*/
 
 .relation_color.feared {
 	background-color: #833131;
@@ -178,14 +154,14 @@ body {
 	margin-right: auto;
 	display: flex;
 	background-color: var(--background);
-	padding: 24px;
+	padding: 36px;
 }
 
 #overlay {
 	position: absolute;
 	margin-left: 4px;
-	width: calc((var(--content-width) * 2) + 22px);
-	height: calc(100% - 48px);
+	width: 100%;
+	height: 100%;
 	background: url('./assets/pattern.png') repeat;
 	background-size: 2048px 2048px;
 	opacity: 0.1;
@@ -208,8 +184,8 @@ body {
 	height: calc(100% - 4px);
 	width: var(--content-width);
 	border: 2px solid var(--primary);
-	margin-left: 6px;
-	margin-right: 6px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 h1 {
@@ -250,4 +226,10 @@ p {
 	border-right: 2px solid var(--primary);
 	margin-left: 12px;
 	margin-right: 12px;
+}
+
+#boot {
+	width: 100%;
+	height: 100%;
+	padding-top: calc(50vh - 32px);
 }
