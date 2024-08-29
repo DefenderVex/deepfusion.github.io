@@ -44,6 +44,8 @@ body {
 	width: 100%;
 	display: flex;
 	border-bottom: 2px solid var(--primary);
+	scroll-snap-stop: always;
+	scroll-snap-align: start;
 }
 
 .relation_status {
@@ -154,7 +156,6 @@ body {
 	padding-right: 14px;
 	margin-left: auto;
 	border-left: 2px solid var(--primary);
-	background-color: var(--background);
 }
 
 .row_profile_placeholder {
@@ -240,8 +241,9 @@ p {
 	/*font-size: 16px;
 	height: 25px;
 	overflow: hidden;*/
-	margin-bottom: 0;
+	margin-bottom: 5px;
 	margin-top: 10px;
+	line-height: 30px;
 }
 
 .divider {

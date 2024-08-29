@@ -43,7 +43,7 @@
 		<script>
 			// A script to add all the trait icons to the page in the png folder to the page, each row has up to 16 icons.
 			// Each icon has a name consisting of a 4 digit number with leading zeros required, starting at 0001 and ending at 4084.
-
+	  
 			// The number of icons to add to the page.
 			const numberOfIcons = (5148 - 999);
 			// The number of icons to add to each row.
@@ -52,39 +52,50 @@
 			const numberOfRows = Math.ceil(numberOfIcons / iconsPerRow);
 			// The number of icons to add to the last row.
 			const iconsInLastRow = numberOfIcons % iconsPerRow;
-
-			// Loop though and create all the rows.
+	  
+			// The number of rows to wrap in a new div.
+			const rowsPerDiv = 29;
+	  
+			// Loop through and create all the rows and divs.
 			for (let i = 0; i < numberOfRows; i++) {
-				// Create a row.
-				const row = document.createElement('div');
-				row.classList.add('row');
-				// Add the row to the page.
-				document.body.appendChild(row);
-
-				// The number of icons to add to this row.
-				let iconsInThisRow = iconsPerRow;
-				// If this is the last row, add the correct number of icons.
-				if (i === numberOfRows - 1) {
-					iconsInThisRow = iconsInLastRow;
-				}
-
-				// Cycle though all the icons. Display it as a 32x32 image with the number of the icon above it, allocating a 12px tall space for the number ABOVE the icon. Include the leading zeros for the filename and number.
-				for (let j = 0; j < iconsInThisRow; j++) {
-					// Create the icon.
-					const icon = document.createElement('img');
-					icon.src = `skin/${(i * iconsPerRow + j + 1000).toString()}.png`;
-					icon.classList.add('square');
-					// Add the icon to the row.
-					row.appendChild(icon);
-
-					// Create the number.
-					const number = document.createElement('div');
-					number.classList.add('number');
-					number.innerText = (i * iconsPerRow + j + 1000).toString();
-					// Add the number to the row.
-					row.appendChild(number);
-				}
+			  // Create a row.
+			  const row = document.createElement('div');
+			  row.classList.add('row');
+	  
+			  // Check if it's time to create a new div.
+			  if (i % rowsPerDiv === 0) {
+				 const div = document.createElement('div');
+				 div.classList.add('div-wrapper');
+				 document.body.appendChild(div);
+				 div.appendChild(row);
+			  } else {
+				 document.querySelector('.div-wrapper:last-child').appendChild(row);
+			  }
+	  
+			  // The number of icons to add to this row.
+			  let iconsInThisRow = iconsPerRow;
+			  // If this is the last row, add the correct number of icons.
+			  if (i === numberOfRows - 1) {
+				 iconsInThisRow = iconsInLastRow;
+			  }
+	  
+			  // Cycle though all the icons. Display it as a 32x32 image with the number of the icon above it, allocating a 12px tall space for the number ABOVE the icon. Include the leading zeros for the filename and number.
+			  for (let j = 0; j < iconsInThisRow; j++) {
+				 // Create the icon.
+				 const icon = document.createElement('img');
+				 icon.src = `skin/${(i * iconsPerRow + j + 1000).toString()}.png`;
+				 icon.classList.add('square');
+				 // Add the icon to the row.
+				 row.appendChild(icon);
+	  
+				 // Create the number.
+				 const number = document.createElement('div');
+				 number.classList.add('number');
+				 number.innerText = (i * iconsPerRow + j + 1000).toString();
+				 // Add the number to the row.
+				 row.appendChild(number);
+			  }
 			}
-		</script>
+		 </script>
 	</body>
 </html>
