@@ -76,55 +76,73 @@ function generateRandomString(length, characters) {
 }
 
 function fillDivsWithRandomChars() {
-const divs = document.querySelectorAll('.scramble');
-divs.forEach((div) => {
-	const originalText = div.textContent;
-	const originalSpaces = originalText.match(/\s/g) || [];
-	const originalChars = originalText.replace(/\s/g, '');
+	const divs = document.querySelectorAll('.scramble');
 
-	const randomChars = generateRandomString(originalChars.length, '░▒');
+	divs.forEach((div) => {
+		const originalText = div.textContent;
+		const originalSpaces = originalText.match(/\s/g) || [];
+		const originalChars = originalText.replace(/\s/g, '');
 
-	let newText = '';
-	let spaceIndex = 0;
+		const randomChars = generateRandomString(originalChars.length, '░▒');
 
-	for (let i = 0; i < originalText.length; i++) {
-		if (originalText[i] === ' ') {
-			newText += ' ';
-			spaceIndex++;
-		} else {
-			newText += randomChars[i - spaceIndex];
+		let newText = '';
+		let spaceIndex = 0;
+
+		for (let i = 0; i < originalText.length; i++) {
+			if (originalText[i] === ' ') {
+				newText += ' ';
+				spaceIndex++;
+			} else {
+				newText += randomChars[i - spaceIndex];
+			}
 		}
-	}
 
-	div.textContent = newText;
-});
+		div.textContent = newText;
+	});
 }
 
 function fillDivs() {
-const divs = document.querySelectorAll('.row_profile_placeholder');
-divs.forEach((div) => {
-	div.innerHTML = '';
+	const divs = document.querySelectorAll('.row_profile_placeholder');
 
-	for (let i = 0; i < numRows; i++) {
-		const row = document.createElement('div');
-		row.setAttribute('class', 'placeholder_line');
+	divs.forEach((div) => {
+		div.innerHTML = '';
 
-		if (i === 99) {
-			const errorIndex = Math.floor(Math.random() * (charsPerRow - 13));
-			row.textContent = generateRandomString(errorIndex, '▒▓') + "[[ ERR-IMG ]]" + generateRandomString(charsPerRow - errorIndex - 13, '▒▓');
-			row.style.color = 'var(--failure)'
-		} else {
-			row.textContent = generateRandomString(charsPerRow, '▒▓');
+		for (let i = 0; i < numRows; i++) {
+			const row = document.createElement('div');
+			row.setAttribute('class', 'placeholder_line');
+
+			if (i === 99) {
+				const errorIndex = Math.floor(Math.random() * (charsPerRow - 13));
+				row.textContent = generateRandomString(errorIndex, '▒▓') + "[[ ERR-IMG ]]" + generateRandomString(charsPerRow - errorIndex - 13, '▒▓');
+				row.style.color = 'var(--failure)'
+			} else {
+				row.textContent = generateRandomString(charsPerRow, '▒▓');
+			}
+
+			div.appendChild(row);
 		}
+	});
+}
 
-		div.appendChild(row);
-	}
-});
+function censorChars() {
+	const divs = document.querySelectorAll('.censor');
+
+	divs.forEach((div) => {
+		// Get the text content of the div
+		const text = div.textContent;
+		
+		// Replace non-space characters with hyphens
+		const replacedText = text.replace(/\S/g, '-');
+		
+		// Set the modified text content back to the div
+		div.textContent = replacedText;
+	});
 }
 
 function refreshDivs() {
 	fillDivs();
 	fillDivsWithRandomChars();
+	censorChars();
 	setTimeout(refreshDivs, 1000);
 }
 

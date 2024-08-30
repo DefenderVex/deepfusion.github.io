@@ -3,31 +3,84 @@ var sound_startup = new Audio("sounds/ui_terminal_holotape_programload_02.wav");
 
 var tripped = false;
 
+function processWords(words) {
+	let currentTag = '';
+	let currentWord = '';
+	let combinedWords = [];
+ 
+	words.forEach((word) => {
+	  if (word.startsWith('<') && !word.startsWith('</')) {
+		 // Start of a tag, store the tag
+		 currentTag = word;
+	  } else if (word.startsWith('</')) {
+		 // End of a tag
+		 if (currentWord) {
+			combinedWords.push(`${currentTag}${currentWord}</${currentTag.slice(1)}`);
+			currentWord = '';
+		 }
+		 combinedWords.push(word);
+		 currentTag = '';
+	  } else if (word.trim() === '') {
+		 // Space or empty string
+		 if (currentWord) {
+			combinedWords.push(`${currentTag}${currentWord}</${currentTag.slice(1)}`);
+			currentWord = '';
+		 }
+		 combinedWords.push(word);
+	  } else {
+		 // Normal word or inside tag
+		 if (currentTag) {
+			if (currentWord) {
+			  combinedWords.push(`${currentTag}${currentWord}</${currentTag.slice(1)}`);
+			}
+			currentWord = word;
+		 } else {
+			combinedWords.push(word);
+		 }
+	  }
+	});
+ 
+	// Handle any remaining words and tags
+	if (currentWord) {
+	  combinedWords.push(`${currentTag}${currentWord}</${currentTag.slice(1)}`);
+	}
+ 
+	return combinedWords;
+ }
+ 
+ // Example usage:
+ const rawWords = ['<p>', 'Hello', ' ', 'world', '</p>'];
+ const processedWords = processWords(rawWords);
+ console.log(processedWords);
+ 
+
 const paragraphs = document.querySelectorAll('p');
 
 function addTypingEffect() {
 	var max = 0;
 
 	paragraphs.forEach(paragraph => {
-		const words = paragraph.textContent.split(' ');
+		const words = paragraph.innerHTML.split(/(<\/?\w+[^>]*>|\s+)/).filter(Boolean);
 		paragraph.textContent = '';
 
 		paragraph.style.display = '';
 
-		if (words.length > max) {
-			max = words.length
+		const combinedWords = processWords(words);
+
+		if (combinedWords.length > max) {
+			max = combinedWords.length
 		}
 
 		let index = 0;
 
 		const typingInterval = setInterval(() => {
-			paragraph.textContent += words[index] + ' ';
+			paragraph.innerHTML += combinedWords[index];
 			index++;
 
-			if (index === words.length) {
+			if (index === combinedWords.length) {
 				clearInterval(typingInterval);
 			}
-		}, 100);
+		}, 20);
 	});
 }
 

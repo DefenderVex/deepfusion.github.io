@@ -207,6 +207,11 @@ b {
 
 p {
 	margin: 12px;
+	line-height: 26px;
+}
+
+p i.censor {
+	background-color: var(--primary);
 }
 
 .censor {
@@ -218,7 +223,6 @@ p {
 	height: 25px;
 	overflow: hidden;*/
 	margin-bottom: 5px;
-	margin-top: 10px;
 	line-height: 30px;
 }
 
